@@ -7,6 +7,7 @@ import { useEffect, useState, useRef } from "react";
 export default function Navbar() {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const marqueeRef = useRef(null);
 
   useEffect(() => {
@@ -42,20 +43,46 @@ export default function Navbar() {
     };
   }, []);
 
-  const handleLogin = () => router.push("/login");
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (isMobileMenuOpen && !event.target.closest('.mobile-menu-container')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleOutsideClick);
+    return () => document.removeEventListener('click', handleOutsideClick);
+  }, [isMobileMenuOpen]);
+
+  const handleLogin = () => {
+    router.push("/login");
+    setIsMobileMenuOpen(false);
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("auth");
     setIsLoggedIn(false);
     router.push("/");
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleNavigation = (path) => {
+    router.push(path);
+    setIsMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/about-us" },
+    { name: "About Us", path: "/aboutus" },
     { name: "Courses", path: "/courses" },
     { name: "Admissions", path: "/admissions" },
     { name: "Faculty", path: "/faculty" },
-    { name: "Student Corner", path: "/student-corner" },
+    { name: "Student Corner", path: "/student_corner" },
     { name: "Placement", path: "/placement" },
     { name: "Contact Us", path: "/contact-us" },
     { name: "Gallery", path: "/gallery" },
@@ -66,7 +93,7 @@ export default function Navbar() {
   return (
     <div className="w-full sticky top-0 z-50">
       {/* Top bar with login/logout */}
-      <div className="bg-[#0b1539] flex justify-end pr-10 items-center px-4 py-1">
+      <div className="bg-[#0b1539] flex justify-end pr-4 md:pr-10 items-center px-4 py-1">
         {!isLoggedIn ? (
           <button
             onClick={handleLogin}
@@ -75,11 +102,11 @@ export default function Navbar() {
             Log In
           </button>
         ) : (
-          <div className="flex items-center space-x-4">
-            <span className="text-white text-sm">Welcome, User</span>
+          <div className="flex items-center space-x-2 md:space-x-4">
+            <span className="text-white text-xs md:text-sm">Welcome, User</span>
             <button
               onClick={handleLogout}
-              className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm"
+              className="bg-red-500 hover:bg-red-600 text-white px-2 md:px-3 py-1 rounded text-xs md:text-sm"
             >
               Logout
             </button>
@@ -89,34 +116,99 @@ export default function Navbar() {
       <hr className="bg-white border border-white" />
       
       {/* Main navbar section */}
-      <div className="bg-[#1c2848] w-full">
-        <div className="w-[95%] mx-auto px-6 flex items-center justify-between py-1 max-w-[1600px]">
+      <div className="bg-[#1c2848] w-full mobile-menu-container">
+        <div className="w-[95%] mx-auto px-4 md:px-6 flex items-center justify-between py-2 md:py-1 max-w-[1600px]">
           {/* Logo */}
-          <div onClick={() => router.push("/")} className="cursor-pointer">
-            <Image src="/logo.png" alt="Logo" width={80} height={80} />
+          <div onClick={() => handleNavigation("/")} className="cursor-pointer">
+            <Image 
+              src="/logo.png" 
+              alt="Logo" 
+              width={60} 
+              height={60} 
+              className="md:w-[80px] md:h-[80px]"
+            />
           </div>
 
-          {/* Navigation menu */}
-          <ul className="flex space-x-8 text-xl font-medium">
+          {/* Desktop Navigation menu */}
+          <ul className="hidden lg:flex space-x-6 xl:space-x-8 text-lg xl:text-xl font-medium">
             {menuItems.map(({ name, path }) => (
               <li
                 key={name}
-                onClick={() => router.push(path)}
+                onClick={() => handleNavigation(path)}
                 className={`cursor-pointer ${
                   path === "/" ? "text-yellow-400" : "text-white"
-                } hover:text-yellow-300 transition`}
+                } hover:text-yellow-300 transition whitespace-nowrap`}
               >
                 {name}
               </li>
             ))}
           </ul>
+
+          {/* Mobile hamburger menu button */}
+          <button
+            onClick={toggleMobileMenu}
+            className="lg:hidden flex flex-col space-y-1 focus:outline-none"
+            aria-label="Toggle mobile menu"
+          >
+            <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+              isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+            }`}></div>
+            <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+              isMobileMenuOpen ? 'opacity-0' : ''
+            }`}></div>
+            <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+              isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+            }`}></div>
+          </button>
+        </div>
+
+        {/* Mobile menu dropdown */}
+        <div className={`lg:hidden bg-[#1c2848] border-t border-gray-600 transition-all duration-300 overflow-hidden ${
+          isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          {/* Grid layout for mobile menu items */}
+          <div className="py-4 px-6 grid grid-cols-2 gap-3">
+            {menuItems.map(({ name, path }) => (
+              <div
+                key={name}
+                onClick={() => handleNavigation(path)}
+                className={`cursor-pointer py-3 px-2 text-sm font-medium border border-gray-600 rounded-md text-center transition-colors ${
+                  path === "/" ? "text-yellow-400 border-yellow-400" : "text-white border-gray-600"
+                } hover:text-yellow-300 hover:border-yellow-300`}
+              >
+                {name}
+              </div>
+            ))}
+          </div>
+          
+          {/* Mobile login/logout in menu */}
+          <div className="px-6 pb-4 border-t border-gray-600 pt-4">
+            {!isLoggedIn ? (
+              <button
+                onClick={handleLogin}
+                className="w-full bg-[#FFDF35] hover:bg-yellow-500 text-black px-4 py-2 rounded text-sm font-medium"
+              >
+                Log In
+              </button>
+            ) : (
+              <div className="space-y-2">
+                <p className="text-white text-sm">Welcome, User</p>
+                <button
+                  onClick={handleLogout}
+                  className="w-full bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm font-medium"
+                >
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Continuous Marquee */}
-        <div className="w-full bg-[#FFD700] py-1 overflow-hidden">
+        <div className="w-full bg-[#FFDF35] py-1 overflow-hidden">
           <div 
             ref={marqueeRef}
-            className="whitespace-nowrap text-black font-semibold flex"
+            className="whitespace-nowrap text-black font-semibold flex text-sm md:text-base"
           >
             {Array(25).fill(marqueeText).map((item, index) => (
               <span key={index} className="inline-block mr-8">

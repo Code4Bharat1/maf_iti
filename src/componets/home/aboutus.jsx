@@ -18,28 +18,46 @@ const aboutItems = [
 
 export default function HomeAboutUs() {
   return (
-    <section className="relative bg-[#e8f0ff] py-12 px-4 overflow-hidden">
+    <section className="relative bg-white py-10 px-4 overflow-hidden">
       {/* Heading */}
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[#0a1f44]">About Us</h2>
+    <h2 className="text-center text-5xl md:text-4xl font-bold  text-[#1F2A44] z-50 relative mb-8">
+    About Us
+  </h2>
+      {/* Black line behind cards */}
+   <div className="absolute top-1/2 left-0 right-0 mx-35 h-8 bg-black z-10 rounded" />
 
       {/* Card container */}
-      <div className="flex flex-col md:flex-row flex-wrap justify-center items-stretch gap-6 max-w-7xl mx-auto">
+      <div className="relative z-20 flex flex-col md:flex-row flex-wrap justify-center items-stretch gap-6 max-w-7xl mx-auto px-4 mb-10">
         {aboutItems.map((item, index) => (
-          <div
-            key={index}
-            className="relative bg-white rounded-3xl p-6 shadow-lg w-full md:w-[45%] lg:w-[22%] text-center text-[#0a1f44]"
-          >
-            {/* Yellow highlight corner */}
-            <div className="absolute top-0 left-0 h-5 w-5 bg-yellow-400 rounded-tr-lg rounded-bl-3xl z-0" />
-            <div className="absolute bottom-0 right-0 h-3 w-3 bg-yellow-400 rounded-tl-lg rounded-br-3xl z-0" />
+          <div key={index} className="relative w-full md:w-[45%] lg:w-[22%]">
             
-            <p className="relative z-10 text-base md:text-[16px] leading-relaxed">{item.text}</p>
+            {/* Yellow background box with one rounded corner */}
+        <div className="absolute inset-0 w-60 bg-yellow-400 border border-[#C3C3C3] rounded-tl-3xl rounded-r-3xl h-80 z-10" />
+
+
+            {/* White top card */}
+            <div className="ml-4 relative w-65 z-30 bg-white mt-2 h-76 border border-[#C3C3C3] rounded-tl-3xl rounded-r-3xl p-6 shadow-lg text-center text-[#0a1f44]">
+              <p className="text-base md:text-[16px] leading-relaxed">
+                {item.text}
+              </p>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Wavy bottom background (optional) */}
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-[#bcd3f3] rounded-t-[100%]" />
+      {/* Bottom wave (optional, can tweak color/shape) */}
+    <div className="absolute bottom-0 bg-[#BAC7E5] left-0 w-full z-10">
+  <svg
+    viewBox="0 0 1440 100"
+    className="w-full h-[260px]"
+    preserveAspectRatio="none"
+  >
+    {/* Mirrored the wave by flipping the path horizontally */}
+    <path fill="white" d="M1440,0 C960,100 480,0 0,100 L0,0 L1440,0 Z" />
+  </svg>
+</div>
+
+  
     </section>
   );
 }
