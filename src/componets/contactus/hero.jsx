@@ -21,6 +21,18 @@ export default function ContactSection() {
     }));
   };
 
+  const handleMobileChange = (e) => {
+    const value = e.target.value;
+    // Only allow digits and limit to 10 characters
+    const numbersOnly = value.replace(/[^0-9]/g, '');
+    if (numbersOnly.length <= 10) {
+      setFormData(prev => ({
+        ...prev,
+        mobile: numbersOnly
+      }));
+    }
+  };
+
   async function handleSubmit(event) {
     event.preventDefault();
     setIsSubmitting(true);
@@ -41,6 +53,13 @@ export default function ContactSection() {
       return;
     }
 
+    // Mobile number validation - exactly 10 digits
+    if (formData.mobile.length !== 10) {
+      setSubmitStatus('invalid_mobile');
+      setIsSubmitting(false);
+      return;
+    }
+
     const formDataToSend = new FormData();
     formDataToSend.append("name", formData.name);
     formDataToSend.append("email", formData.email);
@@ -50,8 +69,7 @@ export default function ContactSection() {
     
     // Email configuration to show user's actual email
     formDataToSend.append("from_name", `${formData.name} (via Your Website)`);
-    formDataToSend.append("reply_to", formData.email);
-    formDataToSend.append("from_email", formData.email);
+    
     formDataToSend.append("subject", `New Contact Form Submission from ${formData.name}`);
 
     const object = Object.fromEntries(formDataToSend);
@@ -148,15 +166,23 @@ export default function ContactSection() {
             className="w-full p-3 rounded-lg bg-white outline-none"
             required
           />
-          <input
-            type="tel"
-            name="mobile"
-            value={formData.mobile}
-            onChange={handleInputChange}
-            placeholder="Your Mobile no."
-            className="w-full p-3 rounded-lg bg-white outline-none"
-            required
-          />
+          <div className="relative">
+            <input
+              type="tel"
+              name="mobile"
+              value={formData.mobile}
+              onChange={handleMobileChange}
+              placeholder="Your Mobile no. (10 digits)"
+              className="w-full p-3 rounded-lg bg-white outline-none"
+              required
+              maxLength="10"
+              pattern="[0-9]{10}"
+              title="Please enter exactly 10 digits"
+            />
+            <div className="absolute right-3 top-3 text-sm text-gray-500">
+              {formData.mobile.length}/10
+            </div>
+          </div>
           <textarea
             name="message"
             value={formData.message}
@@ -186,6 +212,11 @@ export default function ContactSection() {
           {submitStatus === 'invalid_email' && (
             <div className="text-yellow-300 text-center font-semibold text-sm">
               Please enter a valid email address.
+            </div>
+          )}
+          {submitStatus === 'invalid_mobile' && (
+            <div className="text-yellow-300 text-center font-semibold text-sm">
+              Please enter exactly 10 digits for mobile number.
             </div>
           )}
 

@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 
 export default function Navbar() {
   const router = useRouter();
+  const pathname = usePathname();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const marqueeRef = useRef(null);
@@ -80,11 +81,11 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/aboutus" },
     { name: "Courses", path: "/courses" },
-    { name: "Admissions", path: "/admissions" },
+    { name: "Admissions", path: "/admission" },
     { name: "Faculty", path: "/faculty" },
     { name: "Student Corner", path: "/student_corner" },
     { name: "Placement", path: "/placement" },
-    { name: "Contact Us", path: "/contact-us" },
+    { name: "Contact Us", path: "/contactus" },
     { name: "Gallery", path: "/gallery" },
   ];
 
@@ -136,7 +137,7 @@ export default function Navbar() {
                 key={name}
                 onClick={() => handleNavigation(path)}
                 className={`cursor-pointer ${
-                  path === "/" ? "text-yellow-400" : "text-white"
+                  pathname === path ? "text-[#FFD700]" : "text-white"
                 } hover:text-yellow-300 transition whitespace-nowrap`}
               >
                 {name}
@@ -172,9 +173,11 @@ export default function Navbar() {
               <div
                 key={name}
                 onClick={() => handleNavigation(path)}
-                className={`cursor-pointer py-3 px-2 text-sm font-medium border border-gray-600 rounded-md text-center transition-colors ${
-                  path === "/" ? "text-yellow-400 border-yellow-400" : "text-white border-gray-600"
-                } hover:text-yellow-300 hover:border-yellow-300`}
+                className={`cursor-pointer py-3 px-2 text-sm font-medium border rounded-md text-center transition-colors ${
+                  pathname === path 
+                    ? "text-yellow-400 border-yellow-400" 
+                    : "text-white border-gray-600 hover:text-yellow-300 hover:border-yellow-300"
+                }`}
               >
                 {name}
               </div>
