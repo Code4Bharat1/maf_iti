@@ -7,11 +7,12 @@ import FAQPage from '@/componets/home/faq'
 import Hero from '@/componets/home/hero'
 import NoticeBoardPage from '@/componets/home/noticeboard'
 import CoursesSection from '@/componets/home/ourcourses'
-import ManagementSection from '@/componets/aboutus/ourmanagement'
+import ManagementSection from '@/componets/home/ourmanagement'
 import RegisterPage from '@/componets/home/register'
 import Testimonials from '@/componets/home/testimonials'
 import VideoGallery from '@/componets/home/videogallery'
 import WelcomeSection from '@/componets/home/welcome'
+
 import React from 'react'
 
 export default function page() {
@@ -30,6 +31,7 @@ export default function page() {
       <Company/>
       <VideoGallery/>
       <Testimonials/>
+      
     </div>
   )
 }
