@@ -53,10 +53,10 @@ export default function BlogSection() {
                 height={250}
                 className="w-full h-[250px] object-cover"
               />
-              <p className="bg-white text-black font-semibold px-4 py-2 mt-4 inline-block ">
+              <p className="bg-white text-black font-medium px-4 py-2 mt-4 inline-block ">
                 {post.date}
               </p>
-              <h3 className="text-lg mx-13 font-medium mt-3 px-2">{post.title}</h3>
+              <h3 className="text-lg mx-22 font-medium mt-3 px-2">{post.title}</h3>
             </div>
           ))}
         </div>

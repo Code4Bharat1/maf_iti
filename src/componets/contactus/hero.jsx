@@ -102,17 +102,17 @@ export default function ContactSection() {
 
   return (
     <section className="py-12 bg-[#f5faff]">
-      <h2 className="text-center text-3xl font-bold text-[#1F2A44] mb-10">
+      <h2 className="text-center text-4xl font-extrabold text-[#1F2A44] mb-10">
         Contact Us
       </h2>
 
       <div
-        className="max-w-6xl mx-auto bg-cover bg-center rounded-xl overflow-hidden relative flex flex-col md:flex-row shadow-lg"
+        className="max-w-6xl mx-auto bg-cover bg-center  overflow-hidden relative flex flex-col md:flex-row shadow-lg"
         style={{ backgroundImage: "url('/contactus/class.png')" }}
       >
         {/* Overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-[#1F2A44]/70 via-[#1F2A44]/50 to-[#1F2A44]/30"
+          className="absolute inset-0 bg-gradient-to-r from-[#1F2A44]/80 via-[#1F2A44]/60 to-[#1F2A44]/40"
         />
         
         {/* Contact Info */}

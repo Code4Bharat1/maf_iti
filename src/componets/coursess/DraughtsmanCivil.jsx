@@ -13,7 +13,7 @@ export default function DraughtsmanCivil() {
             alt="Draughtsman Civil"
             width={600}
             height={400}
-            className="rounded-md shadow-md w-full h-48 sm:h-64 md:h-110 object-cover"
+            className="rounded-md shadow-md w-full h-48 sm:h-64 md:h-80 object-cover"
           />
         </div>
 

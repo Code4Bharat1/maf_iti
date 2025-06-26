@@ -31,7 +31,7 @@ export default function PlacementProcess() {
       <section className="relative w-full hidden md:block">
         {/* Light Blue Top Half */}
         <div className="bg-[#f5f9ff] h-[200px] flex items-center justify-center px-4">
-          <h2 className="text-4xl mb-18 font-bold text-[#0a194f] text-center z-10">
+          <h2 className="text-4xl mb-18 font-extrabold text-[#0a194f] text-center z-10">
             Our 4-Step Placement Process
           </h2>
         </div>

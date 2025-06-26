@@ -18,15 +18,15 @@ export default function Blog3() {
           <div className="hidden lg:block lg:w-1/4 bg-[#1a264f]"></div>
 
           {/* Right - full width on mobile, 3/4 on desktop */}
-          <div className="w-full lg:w-3/4 relative z-10 px-4 sm:px-6 lg:pr-60">
-            <Image
-              src="/home/blog1.png"
-              alt="3D building design"
-              width={700}
-              height={650}
-              className="rounded shadow-md w-full h-auto lg:-ml-40 z-10 mt-2 sm:mt-4 lg:mt-6"
-            />
-          </div>
+         <div className="w-full lg:w-3/4 relative z-10 px-4 sm:px-6 lg:pr-60">
+                    <Image
+                      src="/home/blog1.png"
+                      alt="3D building design"
+                      width={700}
+                      height={550}
+                      className="rounded shadow-md w-full h-110 lg:-ml-80 z-10 mt-2 sm:mt-4 lg:mt-14"
+                    />
+                  </div>
         </div>
 
         {/* Article content */}

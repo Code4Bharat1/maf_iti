@@ -8,7 +8,7 @@ export default function Mapsection() {
         
 {/* Left - Google Map */}
 <div className="w-100 mx-25 flex flex-col items-center">
-  <div className="ml-40 rounded-md overflow-hidden w-full h-[250px]">
+  <div className="ml-40 overflow-hidden border-2 border-[#1F2A44] w-full h-[250px]">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.2532643173985!2d72.93918937519155!3d18.374182482676153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be842f43dba0baf%3A0xbee9d41256606aef!2sAWT%20Mehrunnisa%20Abbas%20Fakih%20Industrial%20Training%20Institute%20(ITI)!5e0!3m2!1sen!2sin!4v1719211150035!5m2!1sen!2sin"
       width="100%"
@@ -24,7 +24,7 @@ export default function Mapsection() {
   href="https://www.google.com/maps?q=AWT+Mehrunnisa+Abbas+Fakih+Industrial+Training+Institute+(ITI)&ll=18.3741825,72.9417646&z=17"
   target="_blank"
   rel="noopener noreferrer"
-  className="mt-4 px-6 py-2 bg-[#1a264f] ml-40 text-white rounded-md hover:bg-[#13203f] transition"
+  className="mt-4 px-6 py-3 bg-[#1a264f] ml-40 text-white rounded-md hover:bg-[#13203f] transition"
 >
   VIEW LOCATION
 </a>
@@ -44,7 +44,7 @@ export default function Mapsection() {
 
   {/* Slightly smaller image inside the same circle */}
  <div 
-  className="hidden md:block absolute rounded-l-full ml-10 inset-0 w-190 h-full overflow-hidden"
+  className="hidden md:block absolute rounded-l-full ml-6 inset-0 w-190 h-full overflow-hidden"
 >
   <Image
     src="/contactus/class2.png"

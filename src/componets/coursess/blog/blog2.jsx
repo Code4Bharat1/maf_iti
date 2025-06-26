@@ -23,15 +23,15 @@ export default function Blog2() {
           <div className="hidden md:block md:w-1/4 bg-[#1a264f]"></div>
 
           {/* Right - 3/4 content on desktop, full width on mobile */}
-          <div className="w-full md:w-3/4 relative z-10 md:pr-60">
-            <Image
-              src="/home/blog3.png"
-              alt="3D building design"
-              width={700}
-              height={650}
-              className="rounded shadow-md w-full h-auto md:-ml-40 z-10 mt-2 sm:mt-4 md:mt-6 object-cover"
-            />
-          </div>
+          <div className="w-full lg:w-3/4 relative z-10 px-4 sm:px-6 lg:pr-60">
+                     <Image
+                       src="/home/blog3.png"
+                       alt="3D building design"
+                       width={700}
+                       height={550}
+                       className="rounded shadow-md w-full h-110 lg:-ml-80 z-10 mt-2 sm:mt-4 lg:mt-14"
+                     />
+                   </div>
         </div>
 
         {/* Article content */}

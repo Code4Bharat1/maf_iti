@@ -50,13 +50,13 @@ export default function Eventgallery() {
 
         <button
           onClick={() => router.push('/student_corner/testimonials')}
-          className="bg-[#1a264f] text-white px-6 py-2 rounded-md hover:bg-[#162143] transition"
+          className="bg-[#1a264f] cursor-pointer text-white px-6 py-2 rounded-md hover:bg-[#162143] transition"
         >
           VIEW MORE
         </button>
 
         {/* Event Gallery */}
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1F2A44] mt-16 mb-10">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-[#1F2A44] mt-16 mb-10">
           Event Gallery
         </h2>
 
@@ -66,20 +66,20 @@ export default function Eventgallery() {
             alt="Graduation Event"
             width={600}
             height={400}
-            className="rounded-lg shadow-md w-full object-cover"
+            className=" shadow-md w-full object-cover"
           />
           <Image
             src="/studentcorner/gallery2.png"
             alt="Seminar Event"
             width={600}
             height={400}
-            className="rounded-lg shadow-md w-full object-cover"
+            className=" shadow-md w-full object-cover"
           />
         </div>
 
         <button
           onClick={() => router.push('/gallery')}
-          className="bg-[#1a264f] text-white px-6 py-2 rounded-md hover:bg-[#162143] transition"
+          className="bg-[#1a264f] text-white px-6 py-2 text-xl cursor-pointer rounded-md hover:bg-[#162143] transition"
         >
           VIEW MORE
         </button>

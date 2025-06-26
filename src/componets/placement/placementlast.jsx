@@ -20,7 +20,7 @@ const placements = [
 export default function Placementlast() {
   return (
     <section className="bg-[#f5f9ff] py-8 sm:py-10 md:py-12">
-      <h2 className="text-center text-xl sm:text-2xl md:text-4xl font-semibold text-[#1F2A44] mb-6 sm:mb-8 md:mb-10 px-4">
+      <h2 className="text-center text-xl sm:text-2xl md:text-4xl font-extrabold text-[#1F2A44] mb-6 sm:mb-8 md:mb-10 px-4">
         Placement at our MAF ITI
       </h2>
       
@@ -37,7 +37,7 @@ export default function Placementlast() {
                 {person.name}
               </h3>
               
-              <div className="bg-white text-sm sm:text-md md:text-md font-medium text-black rounded p-3 px-6 sm:p-4 sm:px-8 md:p-4 md:px-12 whitespace-pre-line inline-block">
+              <div className="bg-white text-sm sm:text-md md:text-lg font-semibold text-black rounded p-3 px-6 sm:p-4 sm:px-8 md:p-4 md:px-8 whitespace-pre-line inline-block">
                 {person.company}
               </div>
             </div>

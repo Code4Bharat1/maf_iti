@@ -54,17 +54,20 @@ export default function StudentTestimonials() {
   }, []);
 
   return (
-    <section className="bg-[#e8f0fc] text-center py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1F2A44] mb-12">
+    <>
+    <div className='bg-[#f4f8ff] text-center  '>
+   <h2 className="text-3xl md:text-5xl py-10 font-extrabold text-[#1F2A44] mb-12">
           Student Testimonials
-        </h2>
+        </h2> </div>
+        <section className="bg-white text-center py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-18">
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="relative bg-[#22356F] text-white rounded-tl-4xl rounded-r-4xl px-6 pt-12 pb-6 shadow-lg min-h-[200px]"
+              className="relative bg-[#22356F] text-white rounded-tl-4xl rounded-r-4xl px-6 pt-12 pb-6 shadow-lg min-h-[240px]"
             >
               <div className="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-white p-1 rounded-full shadow-md">
                 <FaUserCircle className="text-6xl text-[#1a264f]" />
@@ -77,6 +80,6 @@ export default function StudentTestimonials() {
           ))}
         </div>
       </div>
-    </section>
+    </section></>
   );
 }

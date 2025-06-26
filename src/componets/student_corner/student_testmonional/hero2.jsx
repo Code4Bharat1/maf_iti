@@ -16,10 +16,10 @@ export default function TestimonialsSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10 mx-30 ">
         {/* First Video */}
-        <div className="w-full h-64 md:h-72">
+        <div className="w-120 h-64 md:h-80">
           <iframe
-            className="w-full h-full rounded-xl shadow-lg"
-            src="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID_1"
+            className="w-full h-full  shadow-lg"
+            src="https://www.youtube.com/embed/QS_amt6LaT8"
             title="Student Testimonial 1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -27,9 +27,9 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Second Video */}
-        <div className="w-full h-64 md:h-72">
+        <div className="w-120 h-64 md:h-80">
           <iframe
-            className="w-full h-full rounded-xl shadow-lg"
+            className="w-full h-full  shadow-lg"
             src="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID_2"
             title="Success After COPA"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -42,14 +42,14 @@ export default function TestimonialsSection() {
 
 
    
-    <div className="relative rounded-xl overflow-hidden mx-10">
+    <div className="relative overflow-hidden mx-10">
       {/* Background Image */}
       <Image
         src="/home/hero.jpg"
         alt="Institute Background"
         width={1200}
         height={600}
-        className="w-full h-120    object-cover rounded-xl"
+        className="w-full h-120    object-cover "
         priority
       />
 

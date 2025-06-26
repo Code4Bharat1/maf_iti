@@ -32,7 +32,7 @@ export default function PlacementStats() {
                 className="object-contain border-4 border-white bg-white rounded-full"
               />
             </div>
-            <p className="font-semibold text-2xl">30+ Companies Visited</p>
+            <p className="font-semibold text-2xl mt-4">30+ Companies Visited</p>
           </div>
 
           {/* Card 2 */}
@@ -45,7 +45,7 @@ export default function PlacementStats() {
                 className="object-contain border-4 border-white bg-white rounded-full"
               />
             </div>
-            <p className="font-semibold text-2xl">50+ Students Placed in Top Roles</p>
+            <p className="font-semibold text-2xl mt-4">50+ Students Placed in Top Roles</p>
           </div>
 
           {/* Card 3 */}
@@ -58,7 +58,7 @@ export default function PlacementStats() {
                 className="object-contain border-4 border-white bg-white rounded-full"
               />
             </div>
-            <p className="font-semibold text-2xl">Internship Opportunities in 10+ Fields</p>
+            <p className="font-semibold text-2xl mt-4">Internship Opportunities in 10+ Fields</p>
           </div>
         </div>
       </div>

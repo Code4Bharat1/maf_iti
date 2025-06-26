@@ -13,9 +13,9 @@ export default function Blog1() {
         <p className="text-base sm:text-lg text-gray-800 mx-4 sm:mx-8 lg:mx-50 mb-4">– Wednesday, April 10, 2024</p>
 
         {/* Image - Responsive layout */}
-        <div className="relative flex min-h-40 sm:min-h-60 lg:min-h-90 mb-6">
+        <div className="relative flex min-h-40 sm:min-h-60 lg:min-h-100 mb-6">
           {/* Left - hidden on mobile, 1/4 on desktop */}
-          <div className="hidden lg:block lg:w-1/4 bg-[#1a264f]"></div>
+          <div className="hidden lg:block lg:w-1/4 bg-[#1a264f] h-140"></div>
 
           {/* Right - full width on mobile, 3/4 on desktop */}
           <div className="w-full lg:w-3/4 relative z-10 px-4 sm:px-6 lg:pr-60">
@@ -23,8 +23,8 @@ export default function Blog1() {
               src="/home/blog2.png"
               alt="3D building design"
               width={700}
-              height={650}
-              className="rounded shadow-md w-full h-auto lg:-ml-40 z-10 mt-2 sm:mt-4 lg:mt-6"
+              height={550}
+              className="rounded shadow-md w-full h-110 lg:-ml-80 z-10 mt-2 sm:mt-4 lg:mt-14"
             />
           </div>
         </div>

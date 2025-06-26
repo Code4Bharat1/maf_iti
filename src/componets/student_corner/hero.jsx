@@ -63,30 +63,30 @@ export default function StudentCorner() {
       </div>
 
       {/* Heading Section */}
-      <div className="text-center mt-8 sm:mt-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+      <div className="text-center mt-8 sm:mt-12 " >
         <div className="relative inline-block">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1F2A44] mb-6 relative z-10">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-[#1F2A44] mb-6 relative z-10">
             Our Toppers
             
           </h2>
         </div>
-        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold underline ">
+        <h3 className="text-lg sm:text-xl md:text-3xl font-semibold underline ">
           Toppers of 2024
         </h3>
       </div>
 
       {/* Table Section */}
       <div className="mt-6 sm:mt-8 flex justify-center mb-30">
-        <div className="border border-[#C3C3C3] rounded-xl shadow-2xl overflow-hidden w-full max-w-6xl transform hover:shadow-3xl transition-all duration-300 bg-white/50 backdrop-blur-sm">
+        <div className="border border-[#C3C3C3] rounded-xl shadow-[0_4px_4px_rgba(0,0,0,0.3)] overflow-hidden w-full max-w-6xl transform hover:shadow-3xl transition-all duration-300 bg-white/50 backdrop-blur-sm">
           {/* Desktop Table - Hidden on mobile */}
           <table className="hidden sm:table w-full table-auto border-collapse">
             <thead className="relative z-10">
-              <tr className="bg-gradient-to-r from-[#1F2A44] via-[#2A3B5C] to-[#1F2A44] text-white text-sm md:text-xl text-center shadow-xl">
-                <th className="p-2 md:p-4 border-r border-[#3A4B6C] relative overflow-hidden group">
+              <tr className="bg-gradient-to-r from-[#1F2A44] via-[#2A3B5C] to-[#1F2A44] text-white text-sm md:text-xl text-center shadow-[0_4px_4px_rgba(0,0,0,0.3)] ">
+                <th className="p-2 md:p-4 border-r border-black relative overflow-hidden group">
                   <span className="relative z-10">Name of Student</span>
                   <div className="absolute inset-0 bg-white/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </th>
-                <th className="p-2 md:p-4 border-r border-[#3A4B6C] relative overflow-hidden group">
+                <th className="p-2 md:p-4 border-r border-black relative overflow-hidden group">
                   <span className="relative z-10">Name of Trade</span>
                   <div className="absolute inset-0 bg-white/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </th>
@@ -98,11 +98,11 @@ export default function StudentCorner() {
             </thead>
             <tbody>
               {toppers.map((student, index) => (
-                <tr key={index} className="text-center font-normal text-sm md:text-xl bg-gradient-to-r from-white via-[#f8faff] to-white text-gray-900 border-b border-gray-200 last:border-b-0 hover:from-[#f0f6ff] hover:via-[#e8f4ff] hover:to-[#f0f6ff] transition-all duration-300 transform hover:scale-[1.01] hover:shadow-lg group">
-                  <td className="p-2 md:p-4 border-r border-gray-200 relative">
+                <tr key={index} className="text-center font-normal text-sm md:text-xl bg-gradient-to-r from-white via-[#f8faff] to-white text-gray-900 border-b border-gray-900 last:border-b-0 hover:from-[#f0f6ff] hover:via-[#e8f4ff] hover:to-[#f0f6ff] transition-all duration-300 transform hover:scale-[1.01] hover:shadow-lg group">
+                  <td className="p-2 md:p-4 border-r border-gray-900 relative">
                     <span className="relative z-10">{student.name}</span>
                   </td>
-                  <td className="p-2 md:p-4 border-r border-gray-200 relative">
+                  <td className="p-2 md:p-4 border-r border-gray-900 relative">
                     <span className="relative z-10">{student.trade}</span>
                   </td>
                   <td className="p-2 md:p-4 relative">
@@ -120,7 +120,7 @@ export default function StudentCorner() {
               Our Toppers - 2024
             </div>
             {toppers.map((student, index) => (
-              <div key={index} className="bg-gradient-to-r from-white via-[#f8faff] to-white border-b border-gray-200 last:border-b-0 p-4 hover:from-[#f0f6ff] hover:via-[#e8f4ff] hover:to-[#f0f6ff] transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg group animate-fade-in-up" style={{ animationDelay: `${0.1 * index}s` }}>
+              <div key={index} className="bg-gradient-to-r from-white via-[#f8faff] to-white border-b border-gray-900 last:border-b-0 p-4 hover:from-[#f0f6ff] hover:via-[#e8f4ff] hover:to-[#f0f6ff] transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg group animate-fade-in-up" style={{ animationDelay: `${0.1 * index}s` }}>
                 <div className="space-y-3 relative">
                   <div className="absolute top-0 right-0 w-12 h-12 bg-yellow-400/10 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="font-semibold text-gray-900 relative">

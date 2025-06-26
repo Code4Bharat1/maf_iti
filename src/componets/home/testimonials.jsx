@@ -26,7 +26,7 @@ export default function Testimonials() {
   return (
     <section className="bg-[#f5f9ff] text-center py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1F2A44] mb-12">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-[#1F2A44] mb-16">
           Testimonials
         </h2>
 
@@ -60,7 +60,7 @@ export default function Testimonials() {
        
         <button
           onClick={() => router.push('/student_corner/testimonials')}
-          className="bg-[#1a264f] text-white px-6 py-2 rounded-md hover:bg-[#162143] transition"
+          className="bg-[#1a264f] text-white px-6 cursor-pointer py-2 rounded-md hover:bg-[#162143] transition"
         >
           VIEW MORE
         </button>

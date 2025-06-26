@@ -17,10 +17,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1e2a3a] text-white pt-10 pb-4 text-sm">
-      <div className="max-w-7xl mx-auto px-4 border-b border-gray-600 pb-8">
+      <div className="max-w-7xl mx-auto px-4 border-b-2 border-white pb-8">
         {/* Logo & Institute Info - Full Width on Mobile */}
         <div className="flex flex-col items-center text-center mb-8 md:hidden">
-          <Image src="/logo.png" alt="Logo" width={70} height={70} />
+          <Image src="/logo.png" alt="Logo" width={90} height={90} />
           <h2 className="font-medium whitespace-nowrap text-sm text-white">
             Mehrunnissa Abbas Fakih Industrial Training Institute
           </h2>
@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="hidden md:grid md:grid-cols-4 md:gap-10">
           {/* Logo & Institute Info - Desktop */}
           <div className="flex flex-col items-center text-center">
-            <Image src="/logo.png" alt="Logo" width={70} height={70} />
+            <Image src="/logo.png" alt="Logo" width={90} height={90} />
             <h2 className="font-medium whitespace-nowrap text-sm text-white">
               Mehrunnissa Abbas Fakih Industrial Training Institute
             </h2>
