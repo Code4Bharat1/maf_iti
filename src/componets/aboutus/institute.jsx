@@ -1,79 +1,56 @@
-import Image from "next/image";
+import React from "react";
 
-export default function Institute() {
+export default function ManagementCommittee() {
   return (
-    <div className="min-h-scrnee bg-[#F4F8FC] flex flex-col justify-between">
-      {/* Heading */}
-      <div className="py-10 px-4 max-w-5xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-[#1F2C56] text-center font-sans">
-          Institute Management Committee
-        </h1>
-      </div>
-
-      {/* Table Section */}
-      <div className="px-4 pb-10 flex items-center justify-center">
-        <div className="overflow-x-auto w-full h-auto  max-w-5xl rounded-xl shadow-md">
-          <table className="min-w-full border border-gray-300">
-            <thead>
-              <tr className="bg-[#1F2C56] text-white text-left">
-                <th className="px-6 py-4 font-semibold">Name</th>
-                <th className="px-6 py-4 font-semibold">Position</th>
-              </tr>
-            </thead>
-            <tbody className="text-gray-900 bg-white">
-              <tr className="border-b border-gray-200">
-                <td className="px-6 py-4">Awab H. Fakih</td>
-                <td className="px-6 py-4">Chairman I.T.I</td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="px-6 py-4">Mubarak Kapdi</td>
-                <td className="px-6 py-4">Renowned Educationist, Scholar &amp; the Author of 17 Books on Education</td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="px-6 py-4">Khalid Kolpekar</td>
-                <td className="px-6 py-4">Auditor, Fakih and Company</td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="px-6 py-4">Hafiz Osama Farukh Sarang</td>
-                <td className="px-6 py-4">B.E. Civil, Sarang &amp; Associates</td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="px-6 py-4">Ms. Zaibunnissa Malik</td>
-                <td className="px-6 py-4">Ph. D, M.E., B.E. Principal, M.H.S. Polytechnic</td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="px-6 py-4">Tehseen Ulde</td>
-                <td className="px-6 py-4">Diploma in Civil, Civil Contractor</td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="px-6 py-4">Dr. Sirajuddin H Chougle</td>
-                <td className="px-6 py-4">Principal Maharashtra College of Arts Science and Commerce</td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="px-6 py-4">Ateef A.Rauf Fajandar</td>
-                <td className="px-6 py-4">B.E. (Architecture) S A Planning &amp; Design</td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="px-6 py-4">Suhail Ismail Fakih</td>
-                <td className="px-6 py-4">B.E. (Architecture)</td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="px-6 py-4">Akil Firoz Karimi</td>
-                <td className="px-6 py-4">M.E Civil – Director Urban Group</td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="px-6 py-4">Luqman Kazi</td>
-                <td className="px-6 py-4">B.E. – Civil</td>
-              </tr>
-              <tr>
-                <td className="px-6 py-4">Abdul Majid Abdul Hamid Ansari</td>
-                <td className="px-6 py-4">
-                  Founder Director of ARBA Accelerator and Ventures Pvt Ltd, Head of Business Incubation &amp; Serial Entrepreneur, Stakeholder Raigad District (Govt), Entrepreneurship Cell IITB Mentor, Channel Partner CIIA, COT Core Member
+    <div className="min-h-screen bg-[#f4f7fb] py-10 px-4">
+      <h2 className="text-center text-3xl font-extrabold text-[#1F2A44] mb-15">
+        Institute Management Committee
+      </h2>
+      <div className="overflow-x-auto">
+        <table className="w-full max-w-4xl mx-auto border border-gray-300 border-collapse">
+          <thead>
+            <tr className="bg-[#1d3557] text-white text-center">
+              <th className="p-5 text-base font-bold w-1/3 border border-gray-300">
+                Name
+              </th>
+              <th className="p-5 text-base font-bold w-1/3 border border-gray-300">
+                Position
+              </th>
+            </tr>
+          </thead>
+          <tbody className="text-sm md:text-base text-black text-center font-bold">
+            {[
+              ["Awab H. Fakih", "Chairman I.T.I"],
+              ["Mubarak Kapdi", "Renowned Educationist, Scholar & the Author of 17 Books on Education"],
+              ["Khalid Kolpekar", "Auditor, Fakih and Company"],
+              ["Hafiz Osama Farukh Sarang", "B.E. Civil, Sarang & Associates"],
+              ["Ms. Zaibunnissa Malik", "Ph. D, M.E., B.E. Principal, M.H.S. Polytechnic"],
+              ["Tehseen Ulde", "Diploma in Civil, Civil Contractor"],
+              ["Dr. Sirajuddin H Chougle", "Principal Maharashtra College of Arts Science and Commerce"],
+              ["Afeef A. Rauf Fajandar", "B.E. (Architecture) S A Planning & Design"],
+              ["Suhail Ismail Fakih", "B.E. (Architecture)"],
+              ["Akil Firoz Karimi", "M.E Civil – Director Urban Group"],
+              ["Luqman Kazi", "B.E. – Civil"],
+              [
+                "Abdul Majid Abdul Hamid Ansari",
+                `Founder Director of ARBA Accelerator and Ventures Pvt Ltd, Head of Business Incubation & Serial Entrepreneur, 
+                 Stakeholder Raigad District (Govt), Entrepreneurship Cell IITB Mentor, Channel Partner CIIA, COT Core Member`,
+              ],
+            ].map(([name, position], index) => (
+              <tr
+                key={index}
+                className={`${index % 2 === 0 ? "bg-white" : "bg-[#f9fbfd]"}`}
+              >
+                <td className="p-5 border border-gray-300 whitespace-pre-line font-bold">
+                  {name}
+                </td>
+                <td className="p-5 border border-gray-300 whitespace-pre-line font-bold">
+                  {position}
                 </td>
               </tr>
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

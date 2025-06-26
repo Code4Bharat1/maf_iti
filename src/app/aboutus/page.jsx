@@ -1,18 +1,17 @@
-import About from '@/componets/aboutus/aboutus'
-import OurManagement from '@/componets/aboutus/ourmanage'
-import Ourvision from '@/componets/aboutus/ourvision'
-import Committee from '@/componets/aboutus/institute'
-
 import React from 'react'
+import AboutUsPage from '@/componets/aboutus/about'
+import OurManagement from '@/componets/aboutus/ourmanagement'
+import ManagementCommittee from '@/componets/aboutus/institute'
+
+
 
 
 export default function page() {
   return (
-    <div className= 'bg-white'> 
-      <About/>
-      <Ourvision/>
+    <div>
+      <AboutUsPage/>
       <OurManagement/>
-      <Committee />
+      <ManagementCommittee/>
      
      
    

@@ -8,7 +8,8 @@ export default function OurManagement() {
       <div className="flex flex-col md:flex-row shadow-lg h-auto md:h-120">
 
         {/* Left Section - 2/6 */}
-        <div className="w-full md:w-2/6 bg-[#132c4b] flex items-center justify-center p-2">
+        <div className="w-full md:w-2/6 bg-[#132c4b] flex items-center justify-center p-2  py-0.2">
+        
           <Image
             src="/home/president.png"
             alt="President"
@@ -20,8 +21,8 @@ export default function OurManagement() {
 
         {/* Right Section - 5/6 */}
         <div className="w-full md:w-5/6 bg-[#f4f8ff] p-2 mx-0 md:mx-50">
-          <h2 className="text-3xl md:text-5xl text-center md:text-left font-semibold text-[#1F2A44] mb-2">Our Management</h2>
-          <h3 className="text-2xl md:text-3xl mt-5 md:mt-10 mb-2 ml-0 md:ml-40 text-center font-bold text-black mb-2">
+          <h2 className="text-2xl md:text-5xl text-center md:text-left font-semibold text-[#1F2A44] mb-2">Our Management</h2>
+          <h3 className="text-2xl md:text-3xl mt-5 md:mt-10 ml-0 md:ml-40 text-center font-bold text-black ">
             President<br />
             Mr. Saifullah Hasanmiya Firfire
           </h3>
@@ -38,7 +39,7 @@ export default function OurManagement() {
         {/* Right Section - 5/6 */}
         <div className="w-full md:w-5/6 bg-[#f4f8ff] p-2 mx-0 md:mx-50 order-2 md:order-1">
         
-          <h3 className="text-2xl md:text-3xl mt-10 md:mt-20 mb-2 mr-0 md:mr-29 text-center font-bold text-black mb-2">
+          <h3 className="text-2xl md:text-3xl mt-10 md:mt-20 mr-0 md:mr-29 text-center font-bold text-black ">
            Chairman <br />
            Mr. Awab Habib Fakih
           </h3>
@@ -56,34 +57,6 @@ export default function OurManagement() {
             className="left-1/2 h-60 md:h-80 z-10 mr-0 md:mr-90"
           />
         </div>
-      </div>
-    </section>
-
-     <section className="bg-[#f4f8ff] font-poppins">
-      <div className="flex flex-col md:flex-row shadow-lg h-auto md:h-120">
-
-        {/* Left Section - 2/6 */}
-        <div className="w-full md:w-2/6 bg-[#132c4b] flex items-center justify-center p-2">
-          <Image
-            src="/home/principle.png"
-            alt="Principal"
-            width={400}
-            height={400}
-            className="left-1/2 h-60 md:h-80 z-10 ml-0 md:ml-90"
-          />
-        </div>
-
-        {/* Right Section - 5/6 */}
-        <div className="w-full md:w-5/6 bg-[#f4f8ff] p-2 mx-0 md:mx-50">
-          
-          <h3 className="text-2xl md:text-3xl mt-5 md:mt-10 mb-2 ml-0 md:ml-40 text-center font-bold text-black mb-2">
-           Principal <br />
-           Mr.Ulde Azharuddin. Z
-          </h3>
-          <p className="text-gray-700 mx-5 md:mx-auto ml-0 md:ml-40 text-center text-lg md:text-2xl leading-relaxed">
-            I promise this institute continuously strives for constant upgradation for which organization and seminars, faculty interaction with the industry and continuous training of the faculties are constantly organized. Institute provides vibrant environment for developing other life skills also i.e. sports, social services and help the trainees to be a better citizens.</p>       
-        </div>
-
       </div>
     </section>
     </>
