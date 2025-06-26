@@ -20,11 +20,11 @@ export default function HomeAboutUs() {
   return (
     <section className="relative bg-white py-10 px-4 overflow-hidden">
       {/* Heading */}
-    <h2 className="text-center text-5xl md:text-4xl font-bold  text-[#1F2A44] z-50 relative mb-8">
+    <h2 className="text-center text-5xl md:text-5xl font-extrabold  text-[#1F2A44] z-40 relative mb-12">
     About Us
   </h2>
       {/* Black line behind cards */}
-   <div className="absolute top-1/2 left-0 right-0 mx-35 h-8 bg-black z-10 rounded" />
+   <div className="absolute top-1/2 left-0 right-0 mx-35 h-8 bg-[#1F2A44] font-bold z-20 rounded shadow-md shadow-[#C3C3C3]" />
 
       {/* Card container */}
       <div className="relative z-20 flex flex-col md:flex-row flex-wrap justify-center items-stretch gap-6 max-w-7xl mx-auto px-4 mb-10">
@@ -36,8 +36,8 @@ export default function HomeAboutUs() {
 
 
             {/* White top card */}
-            <div className="ml-4 relative w-65 z-30 bg-white mt-2 h-76 border border-[#C3C3C3] rounded-tl-3xl rounded-r-3xl p-6 shadow-lg text-center text-[#0a1f44]">
-              <p className="text-base md:text-[16px] leading-relaxed">
+            <div className="ml-4 relative w-65 z-30 bg-white mt-2 h-76 border border-[#C3C3C3] rounded-tl-3xl rounded-r-3xl p-8 shadow-lg text-center text-[#0a1f44]">
+              <p className="text-base md:text-md font-semibold leading-relaxed">
                 {item.text}
               </p>
             </div>

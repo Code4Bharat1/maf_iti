@@ -43,9 +43,9 @@ export default function FAQPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-blue-50 py-10 px-4 sm:px-10">
-      <h1 className="text-4xl font-bold font-Poppins text-[#1F2A44] text-center mb-6">FAQ’s</h1>
-      <div className="space-y-3 max-w-5xl mx-auto">
+    <main className="min-h-screen bg-[#f4f8ff] py-10 px-4 sm:px-10">
+      <h1 className="text-4xl font-extrabold font-Poppins text-[#1F2A44] text-center mb-6">FAQ’s</h1>
+      <div className="space-y-3 max-w-7xl mx-auto">
         {faqs.map((faq, index) => (
           <FaqItem key={index} question={faq.question} answer={faq.answer} />
         ))}
@@ -59,13 +59,14 @@ function FaqItem({ question, answer }) {
 
   return (
     <div
-      className={`border border-[#C3C3C3] bg-white rounded-md overflow-hidden transition-all duration-300 shadow-sm cursor-pointer ${
+      className={`border border-[#C3C3C3] bg-white rounded-md overflow-hidden transition-all duration-300  cursor-pointer ${
         isOpen ? 'p-4' : 'p-3'
       }`}
       onClick={() => setIsOpen(!isOpen)}
     >
-      <div className="flex justify-between items-center">
-        <h3 className="font-medium text-gray-800">{question}</h3>
+      <div className="flex justify-between items-center ">
+      <h3 className="font-semibold px-4 text-lg text-gray-800  pb-2">
+{question}</h3>
         <ChevronDown
           className={`transition-transform duration-300 ${
             isOpen ? 'rotate-180' : ''
@@ -74,7 +75,7 @@ function FaqItem({ question, answer }) {
       </div>
       {isOpen && (
         <div
-          className="mt-3 text-sm text-gray-600"
+          className="mt-3 text-lg px-4 font-semibold text-gray-800"
           dangerouslySetInnerHTML={{ __html: answer }}
         />
       )}

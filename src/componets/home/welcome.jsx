@@ -84,7 +84,8 @@ export default function WelcomeSection() {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            className="text-4xl md:text-5xl font-Poppins text-center 
+              font-extrabold text-gray-900 mb-4"
             variants={fadeInUp}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -92,7 +93,7 @@ export default function WelcomeSection() {
             Welcome to MAF ITI
           </motion.h2>
           <motion.p 
-            className="text-gray-900 text-2xl leading-relaxed"
+            className="text-gray-900 text-2xl ml-5 leading-relaxed"
             variants={fadeInUp}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}

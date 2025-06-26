@@ -62,7 +62,7 @@ export default function FacultyGridWithHover() {
 
   return (
     <section className="bg-[#f4f8ff] py-12 font-poppins">
-      <h2 className="text-4xl font-bold text-center text-[#1F2A44] mb-10">
+      <h2 className="text-5xl font-extrabold text-center text-[#1F2A44] mb-10">
         Our Faculty
       </h2>
 
@@ -80,8 +80,8 @@ export default function FacultyGridWithHover() {
               <div
                 className={`absolute left-1/2 transform -translate-x-1/2 rounded-2xl shadow-xl transition-all duration-300 overflow-hidden ${
                   hoveredIndex === index
-                    ? "bg-yellow-400 w-[300px] h-[380px] top-2"
-                    : "bg-yellow-300 w-[280px] h-[300px] top-16"
+                    ? "bg-yellow-400 w-[310px] h-[420px] top-2"
+                    : "bg-yellow-300 w-[280px] h-[320px] top-16"
                 }`}
               />
 
@@ -99,17 +99,17 @@ export default function FacultyGridWithHover() {
               </div>
 
               {/* Content */}
-              <div className={`absolute left-1/2 transform -translate-x-1/2 bg-[#2D314A] rounded-xl px-6 py-4 z-30 transition-all duration-300 ${
-                hoveredIndex === index ? 'top-48 w-[280px]' : 'top-52 w-[260px]'
+              <div className={`absolute left-1/2 transform -translate-x-1/2 bg-[#2D314A] rounded-xl px-3 py-4 z-30 transition-all duration-300 ${
+                hoveredIndex === index ? 'top-49 w-[220px]' : 'top-52 w-[220px]'
               }`}>
                 <div className="text-center text-[#FFDF35]">
-                  <h3 className="text-lg font-bold leading-tight mb-1">{member.name}</h3>
-                  <p className="font-semibold text-sm text-yellow-200 mb-2">{member.title}</p>
-                  <p className="text-xs text-white mb-2">{member.experience}</p>
+                  <h3 className="text-xl font-medium leading-tight mb-1">{member.name}</h3>
+                  <p className="font-semibold text-xl text-[#FFDF35] mb-1">{member.title}</p>
+                  <p className="text-sm text-white text-[#FFDF35] mx-2 mb-0">{member.experience}</p>
                   
                   {(hoveredIndex === index || isMobile) && (
-                    <div className="mt-3 pt-3 ">
-                      <p className="text-xs text-gray-300 leading-relaxed">{member.bio}</p>
+                    <div className="mt-2 pt-2 ">
+                      <p className="text-xs text-gray-300 break-words leading-relaxed">{member.bio}</p>
                     </div>
                   )}
                 </div>

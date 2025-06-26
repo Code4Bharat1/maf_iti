@@ -21,16 +21,16 @@ export default function CoursesSection() {
   return (
     <section className="bg-[#f3f8fe] py-12">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[#1a264f]">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-10 text-[#1a264f]">
           Our Courses
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 ">
           {courses.map((course, idx) => (
             <div
               key={idx}
-              className="bg-white  overflow-hidden shadow hover:shadow-lg transition"
+              className="bg-white  overflow-hidden shadow-md  hover:shadow-lg transition"
             >
-              <div className="relative w-full h-56">
+              <div className="relative  w-full h-56">
                 <Image
                   src={course.image}
                   alt={course.title}

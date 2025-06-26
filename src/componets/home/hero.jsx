@@ -19,7 +19,9 @@ export default function Hero() {
         </div>
 
         {/* Transparent Black Overlay */}
-        <div className="absolute inset-0 bg-white/5"></div>
+     <div
+          className="absolute inset-0 bg-gradient-to-r from-[#1F2A44]/70 via-[#1F2A44]/50 to-[#1F2A44]/30"
+        />
 
         {/* Overlay Text - Positioned like the reference image */}
         <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-12">

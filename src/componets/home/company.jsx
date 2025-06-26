@@ -97,11 +97,11 @@ export default function TopRecruitersSwap() {
 
   return (
     <section className="bg-[#f5f9ff] text-center py-10 overflow-hidden">
-      <h2 className="text-2xl md:text-4xl font-bold text-[#1a264f] mb-8">
+      <h2 className="text-2xl md:text-4xl font-extrabold text-[#1a264f] mb-8">
         Top Recruiters at MAF ITI
       </h2>
       
-      <div className="relative w-full bg-white shadow-md py-8 px-4 min-h-[200px] flex items-center justify-center">
+      <div className="relative w-full bg-white shadow-[0_-2px_0_rgba(0,0,0,0.1),0_2px_0_rgba(0,0,0,0.1)] py-8 px-4 min-h-[200px] flex items-center justify-center">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={currentSet}
@@ -131,17 +131,7 @@ export default function TopRecruitersSwap() {
           </motion.div>
         </AnimatePresence>
         
-        {/* Optional: Progress indicators */}
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {Array.from({ length: totalSets }).map((_, index) => (
-            <div
-              key={index}
-              className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                index === currentSet ? 'bg-[#1a264f]' : 'bg-gray-300'
-              }`}
-            />
-          ))}
-        </div>
+       
       </div>
     </section>
   );

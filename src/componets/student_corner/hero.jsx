@@ -38,14 +38,14 @@ export default function StudentCorner() {
       <div className="fixed bottom-20 left-10 w-32 h-32 bg-[#1F2A44]/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       
       {/* Top Image Section */}
-      <div className="relative w-full max-w-6xl mx-auto rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500 group">
+      <div className="relative w-full max-w-7xl mx-auto  overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500 group">
         {/* Image */}
         <Image
           src="/studentcorner/student1.png"
           alt="Student Corner"
           width={1200}
-          height={700}
-          className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+          height={500}
+          className="w-full h-120 object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
         {/* Enhanced Overlay with Gradient */}
@@ -65,12 +65,12 @@ export default function StudentCorner() {
       {/* Heading Section */}
       <div className="text-center mt-8 sm:mt-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
         <div className="relative inline-block">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1F2A44] mb-2 relative z-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1F2A44] mb-6 relative z-10">
             Our Toppers
-            <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400/20 to-transparent blur-sm -z-10 animate-pulse"></div>
+            
           </h2>
         </div>
-        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold underline underline-offset-4 decoration-2 decoration-yellow-400">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold underline ">
           Toppers of 2024
         </h3>
       </div>
@@ -98,7 +98,7 @@ export default function StudentCorner() {
             </thead>
             <tbody>
               {toppers.map((student, index) => (
-                <tr key={index} className="text-center font-semibold text-sm md:text-xl bg-gradient-to-r from-white via-[#f8faff] to-white text-gray-900 border-b border-gray-200 last:border-b-0 hover:from-[#f0f6ff] hover:via-[#e8f4ff] hover:to-[#f0f6ff] transition-all duration-300 transform hover:scale-[1.01] hover:shadow-lg group">
+                <tr key={index} className="text-center font-normal text-sm md:text-xl bg-gradient-to-r from-white via-[#f8faff] to-white text-gray-900 border-b border-gray-200 last:border-b-0 hover:from-[#f0f6ff] hover:via-[#e8f4ff] hover:to-[#f0f6ff] transition-all duration-300 transform hover:scale-[1.01] hover:shadow-lg group">
                   <td className="p-2 md:p-4 border-r border-gray-200 relative">
                     <span className="relative z-10">{student.name}</span>
                   </td>

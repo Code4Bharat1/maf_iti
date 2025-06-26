@@ -8,7 +8,7 @@ export default function NoticeNewsSection() {
       {/* Left Side: Notice Board */}
       <div className="bg-[#1a264f] text-[#FFD700] w-full md:w-4/5 p-6">
         <div className="flex justify-center items-center mb-4">
-          <div className="notice-arrow bg-[#FFD700] text-black text-2xl font-bold px-4 py-3 w-fit">
+          <div className="notice-arrow bg-[#FFD700] text-black text-xl font-bold p-8  py-3 w-fit">
             NOTICE BOARD
           </div>
         </div>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
+import { MdEmail, MdPhone } from "react-icons/md";
 
 export default function Navbar() {
   const router = useRouter();
@@ -23,7 +24,7 @@ export default function Navbar() {
     
     const animate = () => {
       if (marqueeRef.current) {
-        position -= 1; // Speed of movement (adjust as needed)
+        position -= 2; // Speed of movement (adjust as needed)
         
         // Reset position when text has moved completely off screen
         if (position <= -marqueeRef.current.scrollWidth / 2) {
@@ -94,39 +95,64 @@ export default function Navbar() {
   return (
     <div className="w-full sticky top-0 z-50">
       {/* Top bar with login/logout */}
-      <div className="bg-[#0b1539] flex justify-end pr-4 md:pr-10 items-center px-4 py-1">
-        {!isLoggedIn ? (
-          <button
-            onClick={handleLogin}
-            className="bg-[#FFDF35] cursor-pointer hover:bg-yellow-500 text-black px-3 py-1 rounded text-sm"
-          >
-            Log In
-          </button>
-        ) : (
-          <div className="flex items-center space-x-2 md:space-x-4">
-            <span className="text-white text-xs md:text-sm">Welcome, User</span>
-            <button
-              onClick={handleLogout}
-              className="bg-red-500 hover:bg-red-600 text-white px-2 md:px-3 py-1 rounded text-xs md:text-sm"
-            >
-              Logout
-            </button>
-          </div>
-        )}
-      </div>
+      
+        
+{/* Top Contact Info Bar */}
+<div className="bg-[#1c2848] text-white text-xs md:text-sm px-4 py-1 flex justify-between items-start">
+  {/* Left side: email and phone */}
+  <div className="flex items-start space-x-6">
+  {/* Email */}
+  <div className="flex items-start space-x-2 mt-1">
+    <span className="bg-yellow-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm">
+      <MdEmail className="text-sm" />
+    </span>
+    <span className="text-white font-medium font-Poppins">awtmaft@gmail.com</span>
+  </div>
+
+  {/* Phone */}
+  <div className="flex items-start space-x-2 mt-1">
+    <span className="bg-yellow-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm">
+      <MdPhone className="text-sm" />
+    </span>
+    <span className="text-white font-medium font-Poppins">+91 8983508919</span>
+  </div>
+</div>
+
+
+  {/* Right side: login/logout */}
+  <div>
+    {!isLoggedIn ? (
+      <button
+        onClick={handleLogin}
+        className="bg-[#FFDF35] hover:bg-yellow-500 text-black px-3 py-1 rounded text-sm"
+      >
+        Log In
+      </button>
+    ) : (
+      <button
+        onClick={handleLogout}
+        className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm"
+      >
+        Logout
+      </button>
+    )}
+  </div>
+</div>
+
       <hr className="bg-white border border-white" />
       
       {/* Main navbar section */}
       <div className="bg-[#1c2848] w-full mobile-menu-container">
         <div className="w-[95%] mx-auto px-4 md:px-6 flex items-center justify-between py-2 md:py-1 max-w-[1600px]">
           {/* Logo */}
+          
           <div onClick={() => handleNavigation("/")} className="cursor-pointer">
             <Image 
               src="/logo.png" 
               alt="Logo" 
               width={60} 
               height={60} 
-              className="md:w-[80px] md:h-[80px]"
+              className="md:w-[100px] md:h-[80px]"
             />
           </div>
 

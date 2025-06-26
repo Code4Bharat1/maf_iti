@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { FaUserCircle } from 'react-icons/fa';
+import { PiUserCircleFill } from "react-icons/pi";
 
 const testimonials = [
   {
@@ -24,7 +24,7 @@ const testimonials = [
 export default function Testimonials() {
      const router = useRouter();
   return (
-    <section className="bg-[#e8f0fc] text-center py-12 px-4">
+    <section className="bg-[#f5f9ff] text-center py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-[#1F2A44] mb-12">
           Testimonials
@@ -36,13 +36,23 @@ export default function Testimonials() {
               key={index}
               className="relative bg-[#22356F] text-white rounded-tl-4xl rounded-r-4xl px-6 pt-12 pb-6 shadow-lg"
             >
-              {/* Icon */}
-              <div className="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-white p-1 rounded-full shadow-md">
-                <FaUserCircle className="text-6xl text-[#1a264f]" />
-              </div>
+              
+
+  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+
+    
+        {/* Inner white background with icon */}
+        <div className="bg-white border border-[#D9D9D9] rounded-full">
+          <PiUserCircleFill className="text-black text-7xl" />
+        </div>
+    
+
+
+</div>
+
 
               <h3 className="font-semibold text-xl mb-4">{item.name}</h3>
-              <p className="text-lg leading-relaxed mb-2 mx-2">"{item.quote}"</p>
+              <p className="text-lg font-normal leading-relaxed mb-2 mx-2">"{item.quote}"</p>
             </div>
           ))}
         </div>
