@@ -18,9 +18,9 @@ export default function AboutUsPage() {
       </div>
 
       {/* About Section */}
-      <div className="px-8 md:px-20 py-10 text-[#1D2B53]">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">About us</h2>
-        <p className="text-base md:text-lg leading-relaxed">
+      <div className="px-8 md:px-44 py-10 text-[#1D2B53]">
+        <h2 className="text-3xl md:text-5xl font-extrabold mb-4">About us</h2>
+        <p className="text-base md:text-xl font-semibold leading-relaxed">
           Anjuman Waseeul Taleem Educational Trust, Raigad is a reputed institution in the Konkan region,
           dedicated to the educational upliftment of society. Established in Mazgaon, Murud (Raigad), the Trust
           founded Mehrunnissa Abbas Fakih ITI in 2006 to provide technical education to rural and underprivileged
@@ -31,43 +31,40 @@ export default function AboutUsPage() {
       </div>
 
       {/* Vision & Mission Section with 2 Yellow Layered Boxes */}
-     <div className="flex flex-col md:flex-row justify-center items-stretch gap-10 px-6 md:px-20 mb-20">
-  {[
-    {
-      title: 'Our vision',
-      text: 'To become a leading center of skill development in the Konkan region by empowering rural and underprivileged youth through quality technical education, fostering self-reliance, and building a stronger, skilled society.',
-    },
-    {
-      title: 'Our mission',
-      text: 'To deliver practical and industry-relevant training that helps youth build sustainable careers. We strive to foster confidence, skill, and dignity among students from disadvantaged backgrounds, enabling them to lead successful lives.',
-    },
-  ].map((item, index) => (
-    <div key={index} className="relative w-full max-w-md mx-auto">
-      
-      {/* Yellow pill top-left */}
-      <div className="absolute -top-6 -left-7 w-[280px] h-[60px] bg-yellow-400 rounded-full z-0" />
-      
-      {/* Yellow pill bottom-right */}
-      <div className="absolute -bottom-6 -right-6 w-[280px] h-[60px] bg-yellow-400 rounded-full z-0" />
-      
-      {/* White main box */}
-      <div className="relative z-10 bg-white border-[3px] border-[#1D2B53] rounded-[22px] px-6 py-10 text-center shadow-lg">
-        <h3 className="text-2xl md:text-3xl font-bold text-[#1D2B53] mb-4">
-          {item.title}
-        </h3>
-        <p className="text-black text-base md:text-lg leading-relaxed font-medium">
-          {item.text}
-        </p>
+    <div className="relative h-100 bg-[#f3f7ff] flex items-center justify-center">
+      {/* Yellow Boxes */}
+      <div className="absolute grid grid-cols-2 gap-10 gap-x-40 z-0">
+        <div className="bg-[#FFD700] w-118 h-30 rounded-3xl shadow-lg"></div>
+        <div className="bg-[#FFD700] w-118 h-30 rounded-3xl shadow-lg"></div>
+        <div className="bg-[#FFD700] w-118 h-30 rounded-3xl shadow-lg"></div>
+        <div className="bg-[#FFD700] w-118 h-30 rounded-3xl shadow-lg"></div>
+      </div>
+
+      {/* Foreground White Cards */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center gap-16  gap-x-46 px-4">
+        {/* Vision Card */}
+        <div className="bg-white rounded-xl shadow-xl border-4 border-[#1a264f] max-w-md px-6 py-6 text-center">
+          <h2 className="text-3xl font-bold text-[#1a264f] mb-4">Our vision</h2>
+          <p className="text-gray-900 font-[Lateef] font-semibold text-lg">
+            To become a leading center of skill development in the Konkan region by empowering rural and underprivileged youth through quality technical education, fostering self-reliance, and building a stronger, skilled society.
+          </p>
+        </div>
+
+        {/* Mission Card */}
+        <div className="bg-white rounded-xl shadow-xl border-4 border-[#1a264f] max-w-md px-6 py-6 text-center">
+          <h2 className="text-3xl font-bold text-[#1a264f] mb-4">Our mission</h2>
+          <p className="text-gray-900 font-[Lateef] font-semibold text-lg">
+            To deliver practical and industry-relevant training that helps youth build sustainable careers. We strive to foster confidence, skill, and dignity among students from disadvantaged backgrounds, enabling them to lead successful lives.
+          </p>
+        </div>
       </div>
     </div>
-  ))}
-</div>
 
 
       {/* Highlights Section */}
-   <div className="bg-[#F1F7FF] py-5 px-3 sm:px-6 md:px-7 lg:px-12">
-    <div className="bg-[#1F2A44] rounded-4xl p-5 sm:p-6 w-[90%] max-w-7xl mx-auto">
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 ml-10  px-10 py-6 justify-center">
+   <div className="bg-[#F1F7FF] py-5 px-3 sm:px-6 md:px-7 lg:px-12 ">
+    <div className="bg-[#1F2A44] rounded-4xl p-5 sm:p-6 w-[90%] max-w-6xl mx-auto mb-20">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 ml-10  px-10 py-6 justify-center ">
       {[
         {
           icon: "/aboutus/teacher.png",

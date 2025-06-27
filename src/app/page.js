@@ -8,7 +8,7 @@ import Hero from '@/componets/home/hero'
 import NoticeBoardPage from '@/componets/home/noticeboard'
 import CoursesSection from '@/componets/home/ourcourses'
 import ManagementSection from '@/componets/home/ourmanagement'
-import RegisterPage from '@/componets/home/register'
+import Register from '@/componets/home/register'
 import Testimonials from '@/componets/home/testimonials'
 import VideoGallery from '@/componets/home/videogallery'
 import WelcomeSection from '@/componets/home/welcome'
@@ -23,7 +23,7 @@ export default function page() {
       <HomeAboutUs/>
       <NoticeBoardPage/>
       <CoursesSection/>
-      <RegisterPage/>
+    <Register/>
       <FAQPage/>
       <ManagementSection/>
       <FacultySection/>

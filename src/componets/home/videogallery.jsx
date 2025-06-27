@@ -36,7 +36,7 @@ export default function VideoGallery() {
                 src={video.src}
                 title={video.title}
                 allowFullScreen
-                className="w-full h-100  shadow-md"
+                className="w-full h-80  shadow-md"
               ></iframe>
             </div>
           ))}
