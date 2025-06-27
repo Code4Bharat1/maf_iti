@@ -14,7 +14,7 @@ export default function OurManagement() {
   alt="President"
   width={500} // (optional, still helps with layout)
   height={400}
-  className="h-60 md:h-85 w-72 md:w-[700px] z-10 ml-0 md:ml-50"
+  className="h-60 md:h-85 w-72 md:w-[700px] z-10 ml-0 md:ml-60"
 />
 </div>
         {/* Right Section - 5/6 */}
