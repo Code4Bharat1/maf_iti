@@ -17,7 +17,7 @@ export default function OurManagement() {
               alt="President"
               width={500}
               height={400}
-              className="h-60 md:h-85 w-72 md:w-[700px] z-10 ml-0 md:ml-50"
+              className="h-60 md:h-85 w-72 md:w-[700px] z-10 ml-0 md:ml-80"
             />
           </div>
                 
@@ -38,7 +38,7 @@ export default function OurManagement() {
         <div className="flex flex-col md:flex-row shadow-lg h-auto md:h-140">
           {/* Right Section - 5/6 */}
           <div className="w-full md:w-3/6 bg-[#f4f8ff] p-2 mx-0 md:mx-50 order-2 md:order-1">
-            <h3 className="text-2xl md:text-3xl mt-10 md:mt-15 mb-2 mr-0 md:mr-29 text-center font-extrabold text-black mb-2">
+            <h3 className="text-2xl md:text-3xl mt-10 md:mt-15 mb-2 mr-0 md:mr-49 text-center font-extrabold text-black mb-2">
               Chairman <br />
               Mr. Awab Habib Fakih
             </h3>
@@ -54,7 +54,7 @@ export default function OurManagement() {
               alt="Chairman"
               width={500}
               height={400}
-              className="left-1/2 h-60 md:h-85 z-10 mr-0 md:mr-50"
+              className="left-1/2 h-60 md:h-85 z-10 mr-0 md:mr-70"
             />
           </div>
         </div>
