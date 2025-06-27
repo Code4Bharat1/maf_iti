@@ -31,34 +31,38 @@ export default function AboutUsPage() {
       </div>
 
       {/* Vision & Mission Section with 2 Yellow Layered Boxes */}
-      <div className="flex flex-col md:flex-row justify-center items-stretch gap-10 px-6 md:px-20 mb-20">
-        {[
-          {
-            title: 'Our vision',
-            text: 'To become a leading center of skill development in the Konkan region by empowering rural and underprivileged youth through quality technical education, fostering self-reliance, and building a stronger, skilled society.',
-          },
-          {
-            title: 'Our mission',
-            text: 'To deliver practical and industry-relevant training that helps youth build sustainable careers. We strive to foster confidence, skill, and dignity among students from disadvantaged backgrounds, enabling them to lead successful lives.',
-          },
-        ].map((item, index) => (
-          <div key={index} className="relative w-full max-w-md mx-auto h-full">
-            {/* Top-left yellow box */}
-            <div className="absolute inset-0 rounded-[22px] bg-yellow-400 z-0 -translate-x-3 -translate-y-3" />
-            {/* Bottom-right yellow box */}
-            <div className="absolute inset-0 rounded-[22px] bg-yellow-400 z-0 translate-x-3 translate-y-3" />
-            {/* Main white box */}
-            <div className="relative z-10 bg-white border-[3px] border-[#1D2B53] rounded-[22px] px-6 py-10 text-center shadow-lg">
-              <h3 className="text-2xl md:text-3xl font-bold text-[#1D2B53] mb-4">
-                {item.title}
-              </h3>
-              <p className="text-black text-base md:text-lg leading-relaxed font-medium">
-                {item.text}
-              </p>
-            </div>
-          </div>
-        ))}
+     <div className="flex flex-col md:flex-row justify-center items-stretch gap-10 px-6 md:px-20 mb-20">
+  {[
+    {
+      title: 'Our vision',
+      text: 'To become a leading center of skill development in the Konkan region by empowering rural and underprivileged youth through quality technical education, fostering self-reliance, and building a stronger, skilled society.',
+    },
+    {
+      title: 'Our mission',
+      text: 'To deliver practical and industry-relevant training that helps youth build sustainable careers. We strive to foster confidence, skill, and dignity among students from disadvantaged backgrounds, enabling them to lead successful lives.',
+    },
+  ].map((item, index) => (
+    <div key={index} className="relative w-full max-w-md mx-auto">
+      
+      {/* Yellow pill top-left */}
+      <div className="absolute -top-6 -left-7 w-[280px] h-[60px] bg-yellow-400 rounded-full z-0" />
+      
+      {/* Yellow pill bottom-right */}
+      <div className="absolute -bottom-6 -right-6 w-[280px] h-[60px] bg-yellow-400 rounded-full z-0" />
+      
+      {/* White main box */}
+      <div className="relative z-10 bg-white border-[3px] border-[#1D2B53] rounded-[22px] px-6 py-10 text-center shadow-lg">
+        <h3 className="text-2xl md:text-3xl font-bold text-[#1D2B53] mb-4">
+          {item.title}
+        </h3>
+        <p className="text-black text-base md:text-lg leading-relaxed font-medium">
+          {item.text}
+        </p>
       </div>
+    </div>
+  ))}
+</div>
+
 
       {/* Highlights Section */}
    <div className="bg-[#F1F7FF] py-5 px-3 sm:px-6 md:px-7 lg:px-12">

@@ -3,11 +3,11 @@ import React from "react";
 export default function ManagementCommittee() {
   return (
     <div className="min-h-screen bg-[#f4f7fb] py-10 px-4">
-      <h2 className="text-center text-3xl font-extrabold text-[#1F2A44] mb-15">
+      <h2 className="text-center text-4xl font-extrabold text-[#1F2A44] mb-15">
         Institute Management Committee
       </h2>
       <div className="overflow-x-auto">
-        <table className="w-full max-w-4xl mx-auto border border-gray-300 border-collapse">
+        <table className="w-full max-w-4xl mx-auto border border-gray-300 border-collapse rounded-2xl">
           <thead>
             <tr className="bg-[#1d3557] text-white text-center">
               <th className="p-5 text-base font-bold w-1/3 border border-gray-300">
@@ -39,7 +39,7 @@ export default function ManagementCommittee() {
             ].map(([name, position], index) => (
               <tr
                 key={index}
-                className={`${index % 2 === 0 ? "bg-white" : "bg-[#f9fbfd]"}`}
+                className={`${index % 2 === 0 ? "bg-white" : "bg-[#FFFFFF]"}`}
               >
                 <td className="p-5 border border-gray-300 whitespace-pre-line font-bold">
                   {name}
