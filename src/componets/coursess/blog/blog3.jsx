@@ -1,12 +1,32 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
-
+import { useRouter } from 'next/navigation';
 export default function Blog3() {
+  const router = useRouter();
   return (
     <section className="flex w-full min-h-screen">
+             
       {/* Right side - full width on mobile, 3/4 on desktop */}
       <div className="w-full bg-[#f5f9ff] p-4 sm:p-6 lg:p-8 text-[#1a264f]">
+        <button
+      onClick={() => router.push('/courses/blog')}
+      className="mb-6 flex items-center cursor-pointer text-[#1F2C56] hover:text-blue-700 transition-colors duration-200"
+    >   <svg 
+            className="w-5 h-5 mr-2" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M15 19l-7-7 7-7" 
+            />
+          </svg>
+          Back
+        </button>
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mx-4 sm:mx-8 lg:mx-50 font-bold mb-2">
           Exploring the Role and Importance of Draughtsman Mechanical
         </h1>

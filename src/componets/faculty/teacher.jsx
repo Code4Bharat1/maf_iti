@@ -1,12 +1,12 @@
 'use client'
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation"; // Step 1: Import useRouter
 
-export default function Faculty() {
+
+export default function Faculty1() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
-  const router = useRouter(); // Step 2: Use router
+
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -58,6 +58,27 @@ export default function Faculty() {
       image: "/faculty/sir6.png",
       bio: "Experienced in technical education and training.",
     },
+     {
+    name: "Dakhni Rahish. AR",
+    title: "Trade Instructor", 
+    experience: "13+ years of Teaching & Industrial Experience",
+    image: "/faculty/sir7.png", // You'll need to replace with actual path
+    bio: "Experienced in technical education and training.",
+  },
+  {
+    name: "Chogale Sushil. G",
+    title: "Trade Instructor",
+    experience: "11+ years of Teaching & Industrial Experience", 
+    image: "/faculty/sir8.png", // You'll need to replace with actual path
+    bio: "Experienced in technical education and training.",
+  },
+  {
+    name: "Kadiri Maryam. M",
+    title: "Employability Skills Instructor",
+    experience: "4+ years of Teaching & Industrial Experience",
+    image: "/faculty/sir9.png", // You'll need to replace with actual path
+    bio: "Experienced in technical education and training.",
+  }
   ];
 
   return (
@@ -131,15 +152,7 @@ export default function Faculty() {
         </div>
       )}
 
-      {/* Step 3: Add View More Button */}
-      <div className="text-center mt-10">
-        <button
-          onClick={() => router.push("/faculty")} // 🔗 Update this route as needed
-          className="bg-[#1F2A44] cursor-pointer text-white px-6 py-3 rounded-lg font-medium hover:bg-[#2D314A] transition"
-        >
-          VIEW MORE
-        </button>
-      </div>
+      
     </section>
   );
 }

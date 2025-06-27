@@ -1,10 +1,15 @@
-import Courses from '@/componets/course/course'
+
+import DubaiDry from '@/componets/course/dubaidry'
+import OurTrade from '@/componets/coursess/our_trade'
+import BlogSection from '@/componets/home/blog'
 import React from 'react'
 
 export default function page() {
   return (
     <div>
-         <Courses/>
+      <OurTrade/>
+      <DubaiDry/>
+      <BlogSection/>
             
     </div>
   )

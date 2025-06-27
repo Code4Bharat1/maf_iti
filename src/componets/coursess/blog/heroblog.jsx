@@ -8,6 +8,24 @@ export default function Blogs() {
 
   return (
     <div className="bg-blue-100 py-12 px-4">
+        <button
+      onClick={() => router.push('/courses')}
+      className="mb-6 flex items-center cursor-pointer text-[#1F2C56] hover:text-blue-700 transition-colors duration-200"
+    >   <svg 
+            className="w-5 h-5 mr-2" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M15 19l-7-7 7-7" 
+            />
+          </svg>
+          Back
+        </button>
       {/* Heading */}
       <h2 className="text-center text-2xl md:text-3xl font-bold text-[#1a264f] mb-10">
         Read Our Latest Blogs

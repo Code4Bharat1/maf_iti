@@ -1,13 +1,32 @@
 'use client';
 import Image from 'next/image';
-
+import { useRouter } from 'next/navigation';
 export default function MarineFilter() {
+    const router = useRouter();
   return (
     <section className="bg-[#f5f9ff] py-8 sm:py-10 md:py-12 px-4 md:px-16">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-start">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-start">
+        <button
+      onClick={() => router.push('/courses')}
+      className="mb-6 flex items-center cursor-pointer text-[#1F2C56] hover:text-blue-700 transition-colors duration-200"
+    > <svg 
+            className="w-5 h-5 mr-2" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M15 19l-7-7 7-7" 
+            />
+          </svg>
+          Back
+        </button>
         {/* Left Side - Image & Title */}
         <div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a264f] mb-3 sm:mb-4">Marine Fitter</h2>
+          <h2 className="text-2xl sm:text-5xl font-extrbold text-[#1a264f] mb-3 sm:mb-4">Marine Fitter</h2>
           <Image
             src="/courses/course1.png"
             alt="marinefilter"

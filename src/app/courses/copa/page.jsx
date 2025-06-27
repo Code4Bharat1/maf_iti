@@ -1,5 +1,5 @@
 
-import DraughtsmanCivil from '@/componets/coursess/drughtsmancivil'
+import COPASection from '@/componets/coursess/copa'
 import OurTrade from '@/componets/coursess/our_trade'
 
 import React from 'react'
@@ -7,8 +7,9 @@ import React from 'react'
 export default function page() {
   return (
     <div>
-         < DraughtsmanCivil/>
-            <OurTrade/>
+        
+                <COPASection/>
+                  <OurTrade/>   
     </div>
   )
 }

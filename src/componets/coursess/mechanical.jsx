@@ -1,11 +1,31 @@
+'use client'; 
 import Image from "next/image";
-
+import { useRouter } from 'next/navigation';
 export default function MechanicalFitterSection() {
+    const router = useRouter();
   return (
     <div className="bg-[#F4F8FC]  text-[#1F2C56] px-4 py-12">
       {/* Mechanical Fitter Section */}
-      <div className="max-w-5xl mx-auto mb-16">
-        <h2 className="text-xl font-bold mb-4">Mechanical Fitter</h2>
+      <div className="max-w-7xl mx-auto mb-16">
+       <button
+      onClick={() => router.push('/courses')}
+      className="mb-6 flex items-center cursor-pointer text-[#1F2C56] hover:text-blue-700 transition-colors duration-200"
+    > <svg 
+            className="w-5 h-5 mr-2" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M15 19l-7-7 7-7" 
+            />
+          </svg>
+          Back
+        </button>
+        <h2 className="text-5xl font-extrabold mb-10">Mechanical Fitter</h2>
         <div className="grid md:grid-cols-2 gap-6 items-start">
           {/* Image */}
           <div>
@@ -13,12 +33,12 @@ export default function MechanicalFitterSection() {
               src="/aboutus/mechanical2.png"
               alt="Mechanical Fitter"
               width={512}
-              height={282}
-              className="rounded"
+              height={202}
+              className="rounded h-120"
             />
           </div>
           {/* Description */}
-          <div className="text-md leading-relaxed">
+          <div className="text-2xl md:mt-12 text-gray-900 leading-relaxed">
             <p>
               The Mechanical Fitter trade under ITI focuses on training students
               to install, assemble, maintain, and repair mechanical machinery
@@ -34,8 +54,8 @@ export default function MechanicalFitterSection() {
 
         {/* Key Learning */}
         <div className="mt-8">
-          <h3 className="font-bold text-base mb-2">Key Learning :</h3>
-          <ul className="list-disc list-inside text-md space-y-1">
+          <h3 className="font-bold text-2xl mb-2">Key Learning :</h3>
+          <ul className="list-disc list-inside text-xl space-y-6">
             <li>
               Understand core mechanical engineering concepts along with
               workshop safety rules, tool handling, and first aid procedures.
@@ -60,48 +80,9 @@ export default function MechanicalFitterSection() {
         </div>
       </div>
 
-      {/* Our Trades */}
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-8">Our Trades</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <div className="text-center bg-white  shadow rounded p-4">
-            <Image
-              src="/aboutus/classroom1.png"
-              alt="RACT"
-              width={464}
-              height={262}
-              className="mx-auto rounded"
-            />
-            <p className="mt-2 text-sm font-semibold">
-              Refrigeration & Air Conditioning Technician (RACT)
-            </p>
-          </div>
-          <div className="text-center bg-white shadow rounded p-4">
-            <Image
-              src="/aboutus/classroom2.png"
-              alt="Draughtsman Mechanical"
-              width={464}
-              height={262}
-              className="mx-auto rounded"
-            />
-            <p className="mt-2 text-1xl font-semibold">
-              Draughtsman Mechanical
-            </p>
-          </div>
-          <div className="text-center bg-white shadow rounded p-4">
-            <Image
-              src="/aboutus/classroom3.png"
-              alt="COPA"
-              width={464}
-              height={262}
-              className="mx-auto rounded"
-            />
-            <p className="mt-2 text-1xl font-semibold">
-              Computer Operator & Programming Assistant (COPA)
-            </p>
-          </div>
-        </div>
-      </div>
+    
+    
+   
     </div>
   );
 }

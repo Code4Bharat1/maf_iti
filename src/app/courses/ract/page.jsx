@@ -1,4 +1,6 @@
-import RACTandTrades from '@/componets/ract/ract'
+import OurTrade from '@/componets/coursess/our_trade'
+import RACTandTrades from '@/componets/coursess/ract'
+
 import React from 'react'
 
 export default function page() {
@@ -6,7 +8,7 @@ export default function page() {
     <div>
         
                       <RACTandTrades/>
-                     
+                     <OurTrade/>
     </div>
   )
 }

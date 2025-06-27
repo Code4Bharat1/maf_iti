@@ -10,17 +10,17 @@ export default function OurTrade() {
     {
       title: 'Refrigeration & Air Conditioning Technician (RACT)',
       image: '/home/student1.png',
-      route: '/trades/ract',
+      route: '/courses/ract',
     },
     {
       title: 'Draughtsman Mechanical',
       image: '/home/student2.png',
-      route: '/trades/draughtsman-mechanical',
+      route: '/courses/draughtsmanmechanical',
     },
     {
       title: 'Computer Operator & Programming Assistant (COPA)',
       image: '/home/welcome.png',
-      route: '/trades/copa',
+      route: '/courses/copa',
     },
   ];
 
@@ -31,7 +31,8 @@ export default function OurTrade() {
   return (
     <section className="bg-[#f3f8fe] py-12">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[#1a264f]">
+        
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-[#1a264f]">
           Our Trades
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
@@ -49,7 +50,7 @@ export default function OurTrade() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-12 mx-4 text-center text-2xl font-medium text-black">
+              <div className="p-12 mx-4 text-center text-2xl font-semibold text-black">
                 {course.title}
               </div>
             </div>

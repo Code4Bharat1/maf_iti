@@ -30,7 +30,7 @@ export default function GalleryPage() {
       </h2>
 
       {/* Gallery Grid */}
-      <div className="max-w-7xl mx-auto px-2 pb-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto px-2 pb-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
         {galleryImages.map((src, index) => (
           <div key={index} className="w-full">
             <Image
@@ -38,7 +38,7 @@ export default function GalleryPage() {
               alt={`Gallery image ${index + 1}`}
               width={500}
               height={400}
-              className="w-full h-auto rounded-lg object-cover"
+              className="w-full h-auto  object-cover"
             />
           </div>
         ))}

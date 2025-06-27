@@ -1,24 +1,44 @@
+'use client';
 import Image from "next/image";
-
+import { useRouter } from 'next/navigation';
 export default function DraughtsmanCivil() {
+    const router = useRouter();
   return (
     <div className="bg-[#F4F8FC] px-4 py-12 text-[#1F2C56]">
       {/* Draughtsman Civil Section */}
-      <div className="max-w-5xl mx-auto mb-16">
-        <h2 className="text-[20px] font-bold mb-4">Draughtsman Civil</h2>
+      <div className="max-w-7xl mx-auto mb-16">
+       <button
+      onClick={() => router.push('/courses')}
+      className="mb-6 flex items-center text-[#1F2C56] hover:text-blue-700 transition-colors duration-200"
+    >  <svg 
+            className="w-5 h-5 mr-2" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M15 19l-7-7 7-7" 
+            />
+          </svg>
+          Back
+        </button>
+        <h2 className="text-3xl font-extrabold mb-4">Draughtsman Civil</h2>
 
         {/* Image and Description */}
-        <div className="grid md:grid-cols-2 gap-6 items-start">
+        <div className="grid md:grid-cols-2 gap-2 items-start">
           <div>
             <Image
               src="/aboutus/classroom2.png"
               alt="Draughtsman Civil"
-              width={512}
-              height={282}
-              className="rounded"
+              width={412}
+              height={600}
+              className="rounded h-100 w-150"
             />
           </div>
-          <div className="text-[17px] leading-relaxed mt-7 md:mt-12 md:ml-6">
+          <div className="text-[23px] leading-relaxed   md:ml-6">
             <p>
               This course prepares trainees for the construction industry by
               teaching them to create detailed drawings of buildings, roads,
@@ -35,9 +55,9 @@ export default function DraughtsmanCivil() {
 
         {/* Key Learning */}
         <div className="mt-8">
-          <h3 className="text-[18px] font-bold mb-3 underline">Key Learning :</h3>
+          <h3 className="text-[18px] font-bold mb-6 underline">Key Learning :</h3>
           <ul
-            className="list-disc list-inside text-[16px] space-y-2"
+            className="list-disc list-inside text-xl space-y-2"
             style={{ fontFamily: "Times New Roman, serif" }}
           >
             <li>
@@ -69,59 +89,9 @@ export default function DraughtsmanCivil() {
           </ul>
         </div>
       </div>
-
-      {/* Our Trades Section */}
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-[24px] font-bold text-center mb-8">Our Trades</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
-          {/* Trade Card 1 */}
-          <div className="bg-white rounded-md shadow-md overflow-hidden">
-            <Image
-              src="/aboutus/classroom1.png"
-              alt="RACT"
-              width={400}
-              height={300}
-              className="w-full h-auto"
-            />
-            <p className="text-[16px] font-semibold p-4 leading-snug text-black">
-              Refrigeration & Air <br />
-              Conditioning <br />
-              Technician (RACT)
-            </p>
-          </div>
-
-          {/* Trade Card 2 */}
-          <div className="bg-white rounded-md shadow-md overflow-hidden">
-            <Image
-              src="/aboutus/classroom2.png"
-              alt="Draughtsman Mechanical"
-              width={400}
-              height={300}
-              className="w-full h-auto"
-            />
-            <p className="text-[16px] font-semibold p-4 leading-snug text-black">
-              Draughtsman <br />
-              Mechanical
-            </p>
-          </div>
-
-          {/* Trade Card 3 */}
-          <div className="bg-white rounded-md shadow-md overflow-hidden">
-            <Image
-              src="/aboutus/classroom3.png"
-              alt="COPA"
-              width={400}
-              height={300}
-              className="w-full h-auto"
-            />
-            <p className="text-[16px] font-semibold p-4 leading-snug text-black">
-              Computer Operator <br />
-              & Programming <br />
-              Assistant (COPA)
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+</div>
+      
+      
+ 
   );
 }
