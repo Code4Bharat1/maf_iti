@@ -66,7 +66,7 @@ export default function TradesPage() {
   <h3 className="text-4xl font-extrabold text-center text-[#1F2C56] mb-8">
         Admission Process
       </h3>
-  <div className="max-w-3xl mx-auto space-y-14">
+  <div className="max-w-2xl mx-auto space-y-10">
     {[
       {
         step: '01',
@@ -101,8 +101,8 @@ export default function TradesPage() {
               className={`absolute top-0 w-0 h-0 
                 border-l-[20px] border-l-transparent 
                 border-r-[20px] border-r-transparent 
-                border-t-[20px] border-t-[#F4F9FF]
-                ${isEven ? 'left-20 md:left-44' : 'right-20 md:right-44'}`}
+                border-t-[20px] border-t-[#F4F8FC]
+                ${isEven ? 'left-20 md:left-148' : 'right-20 md:right-148'}`}
             />
           )}
 
@@ -135,21 +135,27 @@ export default function TradesPage() {
 
 
 
-      {/* Required Documents */}
-  <div className="w-full max-w-5xl min-h-[500px] mx-auto mt-14 p-9 border border-gray-300 rounded-md bg-white shadow-lg">
-  <h3 className="text-3xl font-semibold text-center mb-8 text-[#000000]">
-    Required Documents for ITI Admission
-  </h3>
-  <ul className="list-disc pl-8 space-y-5 text-xl font-semibold text-black leading-relaxed">
-    <li>SSC Marksheet (Original)</li>
-    <li>School Leaving Certificate (Original)</li>
-    <li>Aadhar Card (Photocopy)</li>
-    <li>Domicile Certificate (Photocopy)</li>
-    <li>Caste Certificate (Photocopy)</li>
-    <li>Non Creamy Layer Certificate (Photocopy)</li>
-    <li>Passport-size Photographs (Size – 4.5 x 3.5)</li>
-  </ul>
+  
+
+{/* Required Documents */}
+<div className="w-full px-6 md:px-24 py-16 bg-[#F4F8FC]">
+  <div className="max-w-6xl min-h-[600px] mx-auto border border-gray-300 rounded-xl bg-white shadow-xl px-12 py-12">
+    <h3 className="text-4xl font-bold text-center mb-10 text-[#000000]">
+      Required Documents for ITI Admission
+    </h3>
+    <ul className="list-disc pl-12 space-y-6 text-2xl font-semibold text-black leading-relaxed">
+      <li>SSC Marksheet (Original)</li>
+      <li>School Leaving Certificate (Original)</li>
+      <li>Aadhar Card (Photocopy)</li>
+      <li>Domicile Certificate (Photocopy)</li>
+      <li>Caste Certificate (Photocopy)</li>
+      <li>Non Creamy Layer Certificate (Photocopy)</li>
+      <li>Passport-size Photographs (Size – 4.5 x 3.5)</li>
+    </ul>
+  </div>
 </div>
+
+
 
 
       {/* Trades Offered Table */}
@@ -163,7 +169,7 @@ export default function TradesPage() {
       className="w-full text-sm text-center border-separate"
       style={{ borderSpacing: 0 }}
     >
-      <thead className="bg-[#1F2C56] text-white text-base">
+      <thead className="bg-[#1F2C56] text-white text-xl">
         <tr>
           <th className="px-5 py-4 border-r border-black">Trade Name</th>
           <th className="px-5 py-4 border-r border-black">Trade Type</th>
@@ -219,7 +225,7 @@ export default function TradesPage() {
       className="w-full h-auto text-sm text-center border-separate min-h-[300px]"
       style={{ borderSpacing: 0 }}
     >
-      <thead className="bg-[#1F2C56] text-white text-sm">
+      <thead className="bg-[#1F2C56] text-white text-xl">
         <tr>
           <th className="px-4 py-3 border-r border-black">Name</th>
           <th className="px-4 py-3 border-r border-black">Eligibility</th>
