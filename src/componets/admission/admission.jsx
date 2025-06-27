@@ -27,7 +27,7 @@ export default function TradesPage() {
   return (
     <div className="bg-[#F4F8FC] text-[#1F2C56] py-12 px-4">
       {/* Our Trades Section */}
-      <h3 className="text-3xl font-bold text-center text-[#1F2C56] mb-8">
+      <h3 className="text-4xl font-extrabold text-center text-[#1F2C56] mb-8">
         Our Trades
       </h3>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -63,7 +63,10 @@ export default function TradesPage() {
 
       {/* Admission Process Section */}
 <div className="bg-[#F4F8FC] py-10 px-4">
-  <div className="max-w-2xl mx-auto space-y-10">
+  <h3 className="text-4xl font-extrabold text-center text-[#1F2C56] mb-8">
+        Admission Process
+      </h3>
+  <div className="max-w-3xl mx-auto space-y-14">
     {[
       {
         step: '01',
@@ -98,26 +101,26 @@ export default function TradesPage() {
               className={`absolute top-0 w-0 h-0 
                 border-l-[20px] border-l-transparent 
                 border-r-[20px] border-r-transparent 
-                border-t-[20px] border-t-white
-                ${isEven ? 'left-20 md:left-148' : 'right-20 md:right-148'}`}
+                border-t-[20px] border-t-[#F4F9FF]
+                ${isEven ? 'left-20 md:left-44' : 'right-20 md:right-44'}`}
             />
           )}
 
           {/* Main Box */}
-          <div className="bg-[#102645] text-white p-5 rounded-lg shadow-lg flex flex-col md:flex-row items-start md:items-center gap-4">
+          <div className="bg-[#102645] text-white px-8 py-6 rounded-lg shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6">
             <div className="text-3xl font-bold text-white">{item.step}</div>
             <div className="w-full text-center">
-              <h3 className="text-yellow-400 font-bold uppercase tracking-wide">
+              <h3 className="text-yellow-400 font-bold uppercase tracking-wide underline">
                 {item.title}
               </h3>
-              <p className="text-white text-sm">{item.description}</p>
+              <p className="text-white text-lg">{item.description}</p>
             </div>
           </div>
 
           {/* Bottom Blue Arrow — skip for last item */}
           {!isLast && (
             <div
-              className={`absolute bottom-[-20px] w-0 h-0 
+              className={`absolute bottom-[-15px] w-0 h-0 
                 border-l-[20px] border-l-transparent 
                 border-r-[20px] border-r-transparent 
                 border-t-[20px] border-t-[#102645] 
@@ -150,12 +153,12 @@ export default function TradesPage() {
 
 
       {/* Trades Offered Table */}
-    <h2 className="text-4xl font-bold text-center mt-16 mb-4 text-blue">
+    <h2 className="text-4xl font-extrabold text-center mt-16 mb-4 text-blue">
   Trades Offered by Our Institute
 </h2>
 
 <div className="overflow-x-auto w-full px-2">
-  <div className="max-w-[1300px] mx-auto overflow-hidden rounded-lg shadow-gray-lg"> {/* Shadow added here */}
+  <div className="max-w-[1300px] mx-auto overflow-hidden rounded-lg shadow-lg"> {/* Shadow added here */}
     <table
       className="w-full text-sm text-center border-separate"
       style={{ borderSpacing: 0 }}
@@ -206,11 +209,11 @@ export default function TradesPage() {
 
 
       {/* Dubai Dry Docks Courses Table */}
-      <h2 className="text-4xl font-bold text-center mt-16 mb-4 text-blue">
+      <h2 className="text-4xl font-extrabold text-center mt-16 mb-4 text-blue">
   Dubai Dry Docks Courses
 </h2>
 
-<div className="overflow-x-auto w-full px-4 mb-16">
+<div className="overflow-x-auto w-full px-4 mb-16 ">
   <div className="max-w-[1100px] mx-auto overflow-hidden rounded-lg shadow-lg"> {/* Rounded + Shadow */}
     <table
       className="w-full h-auto text-sm text-center border-separate min-h-[300px]"

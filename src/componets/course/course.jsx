@@ -38,7 +38,7 @@ export default function Courses() {
   return (
     <div className="bg-[#F4F8FC] pt-10 px-4">
       {/* Our Trades Section */}
-      <h2 className="text-3xl font-bold text-center text-[#1F2C56] mb-8">Our Trades</h2>
+      <h2 className="text-4xl font-extrabold text-center text-[#1F2C56] mb-8">Our Trades</h2>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white text-black shadow-md text-center rounded-lg overflow-hidden">
           <Image
@@ -78,7 +78,7 @@ export default function Courses() {
 
       {/* Dubai Dry Docks Courses */}
       <div className="text-center my-12">
-        <h2 className="text-3xl font-extrabold text-[#1F2C56] mb-6">Dubai Dry Docks Courses</h2>
+        <h2 className="text-4xl font-extrabold text-[#1F2C56] mb-6">Dubai Dry Docks Courses</h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white text-black shadow-md text-center rounded-lg overflow-hidden">
             <Image
@@ -115,7 +115,7 @@ export default function Courses() {
 
       {/* Blog Section (Dynamic) */}
 <div className="bg-[#1F2C56] py-12 text-white text-center">
-  <h2 className="text-3xl font-bold mb-10">Our Blog</h2>
+  <h2 className="text-4xl font-extrabold mb-10">Our Blog</h2>
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
     {blogPosts.map((post, index) => (
       <div
@@ -154,7 +154,7 @@ export default function Courses() {
 
       {/* Video Gallery Section */}
       <div className="text-center py-12 bg-[#F4F8FC]">
-        <h2 className="text-3xl font-bold text-[#1F2C56] mb-8">Video Gallery</h2>
+        <h2 className="text-4xl font-extrabold text-[#1F2C56] mb-8">Video Gallery</h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 px-4">
           <Image
             src="/aboutus/1st.png"

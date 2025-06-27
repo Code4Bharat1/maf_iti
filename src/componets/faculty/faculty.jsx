@@ -83,7 +83,7 @@ export default function FacultyGridWithHover() {
 
   return (
     <section className="bg-[#f4f8ff] py-12 font-poppins">
-      <h2 className="text-4xl font-bold text-center text-[#1F2A44] mb-10">
+      <h2 className="text-4xl font-extrabold text-center text-[#1F2A44] mb-10">
         Our Faculty
       </h2>
 
@@ -182,7 +182,7 @@ export default function FacultyGridWithHover() {
 
   
 {/* Non-Teaching Staff Section */}
-<h2 className="text-4xl font-bold text-center text-[#1F2A44] mb-10">
+<h2 className="text-4xl font-extrabold text-center text-[#1F2A44] mb-10">
   Non-Teaching Staff
 </h2>
 

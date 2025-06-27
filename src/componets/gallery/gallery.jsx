@@ -25,19 +25,19 @@ export default function GalleryPage() {
   return (
     <div className="bg-[#F4F8FC] min-h-screen">
       {/* Gallery Heading */}
-      <h2 className="text-3xl font-bold text-center text-[#1F2C56] py-10">
+      <h2 className="text-4xl font-extrabold text-center text-[#1F2C56] py-10">
         Gallery
       </h2>
 
       {/* Gallery Grid */}
-      <div className="max-w-7xl mx-auto px-4 pb-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto px-2 pb-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {galleryImages.map((src, index) => (
           <div key={index} className="w-full">
             <Image
               src={src}
               alt={`Gallery image ${index + 1}`}
-              width={400}
-              height={300}
+              width={500}
+              height={400}
               className="w-full h-auto rounded-lg object-cover"
             />
           </div>
