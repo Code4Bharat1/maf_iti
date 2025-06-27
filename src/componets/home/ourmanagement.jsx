@@ -14,11 +14,11 @@ export default function OurManagement() {
   alt="President"
   width={500} // (optional, still helps with layout)
   height={400}
-  className="h-60 md:h-85 w-72 md:w-[700px] z-10 ml-0 sm:ml-50 md:ml-80"
+  className="h-60 md:h-85 w-72 md:w-[800px] z-10 ml-0 sm:ml-50 md:ml-70"
 />
 </div>
         {/* Right Section - 5/6 */}
-        <div className="w-full md:w-3/6 bg-[#f4f8ff]  mx-0 md:mx-40">
+        <div className="w-full md:w-4/6 bg-[#f4f8ff]  mx-0 md:mx-40">
           <h2 className="text-3xl md:text-5xl text-center md:text-left font-extrabold text-[#1F2A44] mb-2">Our Management</h2>
           <h3 className="text-xl md:text-3xl mt-5 md:mt-20 mb-2 ml-0 md:ml-40 text-center font-extrabold font-Poppins  whitespace-nowrap text-black mb-2">
             President<br />
@@ -35,7 +35,7 @@ export default function OurManagement() {
       <div className="flex flex-col md:flex-row shadow-lg h-auto md:h-140">
 
         {/* Right Section - 5/6 */}
-        <div className="w-full md:w-3/6 bg-[#f4f8ff] p-2 mx-0 md:mx-50 order-2 md:order-1">
+        <div className="w-full md:w-4/6 bg-[#f4f8ff] p-2 mx-0 md:mx-50 order-2 md:order-1">
         
           <h3 className="text-2xl md:text-3xl mt-10 md:mt-15 mb-2 mr-0 md:mr-49 text-center font-extrabold text-black mb-2">
            Chairman <br />
@@ -52,7 +52,7 @@ export default function OurManagement() {
             alt="Chairman"
             width={500}
             height={400}
-            className="left-1/2 h-60 md:h-85 z-10 mr-0 md:mr-70"
+            className="left-1/2 h-60 md:h-85 z-10 mr-0 md:mr-60"
           />
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function OurManagement() {
         </div>
 
         {/* Right Section - 5/6 */}
-        <div className="w-full md:w-3/6 bg-[#f4f8ff] p-2 mx-0 md:mx-30">
+        <div className="w-full md:w-4/6 bg-[#f4f8ff] p-2 mx-0 md:mx-30">
           
           <h3 className="text-2xl md:text-3xl mt-1 md:mt-20 mb-2 ml-0 md:ml-40 text-center font-extrabold text-black mb-2">
            Principal <br />
