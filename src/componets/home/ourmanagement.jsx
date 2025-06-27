@@ -20,7 +20,7 @@ export default function OurManagement() {
         {/* Right Section - 5/6 */}
         <div className="w-full md:w-3/6 bg-[#f4f8ff]  mx-0 md:mx-40">
           <h2 className="text-3xl md:text-5xl text-center md:text-left font-extrabold text-[#1F2A44] mb-2">Our Management</h2>
-          <h3 className="text-2xl md:text-3xl mt-5 md:mt-20 mb-2 ml-0 md:ml-40 text-center font-extrabold font-Poppins  whitespace-nowrap text-black mb-2">
+          <h3 className="text-xl md:text-3xl mt-5 md:mt-20 mb-2 ml-0 md:ml-40 text-center font-extrabold font-Poppins  whitespace-nowrap text-black mb-2">
             President<br />
             Mr. Saifullah Hasanmiya Firfire
           </h3>

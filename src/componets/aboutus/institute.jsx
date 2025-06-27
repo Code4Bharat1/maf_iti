@@ -38,15 +38,16 @@ Stakeholder Raigad District (Govt), Entrepreneurship Cell IITB Mentor, Channel P
         Institute Management Committee
       </h2>
 
-      <div className="overflow-x-auto max-w-6xl mx-auto">
-        <div className="rounded-2xl border border-[#C3C3C3] overflow-hidden ">
+      {/* Desktop Table View */}
+      <div className="hidden md:block overflow-x-auto max-w-6xl mx-auto">
+        <div className="rounded-2xl border border-[#C3C3C3] overflow-hidden">
           <table className="w-full border-collapse">
             <thead>
               <tr className="bg-[#1d3557] text-white text-center">
                 <th className="p-5 text-xl font-bold w-1/3 border-r border-r-black">
                   Name
                 </th>
-                <th className="p-5 text-xl font-bold w-2/3 ">
+                <th className="p-5 text-xl font-bold w-2/3">
                   Position
                 </th>
               </tr>
@@ -69,6 +70,22 @@ Stakeholder Raigad District (Govt), Entrepreneurship Cell IITB Mentor, Channel P
             </tbody>
           </table>
         </div>
+      </div>
+
+      {/* Mobile Card View */}
+      <div className="md:hidden max-w-4xl mx-auto space-y-4">
+        {members.map(([name, position], index) => (
+          <div key={index} className="bg-white rounded-2xl border border-[#C3C3C3] overflow-hidden shadow-sm">
+            <div className="bg-[#1d3557] text-white p-4">
+              <h3 className="text-lg font-bold text-center">{name}</h3>
+            </div>
+            <div className="p-4">
+              <p className="text-black text-sm font-semibold text-center leading-relaxed whitespace-pre-line">
+                {position}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

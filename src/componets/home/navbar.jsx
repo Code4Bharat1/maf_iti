@@ -106,7 +106,7 @@ export default function Navbar() {
     <span className="bg-yellow-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm">
       <MdEmail className="text-sm" />
     </span>
-    <span className="text-white font-medium font-Poppins">awtmaft@gmail.com</span>
+    <span className="text-white text-xs md:text-sm font-medium font-Poppins">awtmaft@gmail.com</span>
   </div>
 
   {/* Phone */}
@@ -114,7 +114,7 @@ export default function Navbar() {
     <span className="bg-yellow-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm">
       <MdPhone className="text-sm" />
     </span>
-    <span className="text-white font-medium font-Poppins">+91 8983508919</span>
+    <span className="text-white text-xs md:text-sm  font-medium font-Poppins">+91 8983508919</span>
   </div>
 </div>
 
@@ -124,7 +124,7 @@ export default function Navbar() {
     {!isLoggedIn ? (
       <button
         onClick={handleLogin}
-        className="bg-[#FFDF35] hover:bg-yellow-500 text-black px-3 py-1 rounded text-sm"
+        className="bg-[#FFDF35] hover:bg-yellow-500 text-black px-2 py-1 rounded text-sm"
       >
         Log In
       </button>
