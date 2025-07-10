@@ -105,6 +105,8 @@ export default function Navbar() {
           </div>
         </div>
 
+        
+
         {/* Right side: Only logout if logged in */}
         {isLoggedIn && (
           <button

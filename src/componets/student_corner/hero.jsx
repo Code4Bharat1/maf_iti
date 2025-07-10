@@ -70,7 +70,7 @@ export default function StudentCorner() {
             
           </h2>
         </div>
-        <h3 className="text-lg sm:text-xl md:text-3xl font-semibold underline ">
+        <h3 className="text-lg sm:text-xl md:text-3xl font-semibold underline text-[#1F2A44]">
           Toppers of 2024
         </h3>
       </div>

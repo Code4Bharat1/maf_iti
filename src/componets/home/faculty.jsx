@@ -129,7 +129,7 @@ export default function Faculty() {
       <div className="text-center mt-10">
         <button
           onClick={() => router.push("/faculty")} // 🔗 Update this route as needed
-          className="bg-[#1F2A44] cursor-pointer text-white px-6 py-3 rounded-lg font-medium hover:bg-[#2D314A] transition"
+          className="bg-[#1F2A44] cursor-pointer text-white px-6 py-3 rounded-lg font-medium hover:bg-[#2D314A] transition justify-center"
         >
           VIEW MORE
         </button>

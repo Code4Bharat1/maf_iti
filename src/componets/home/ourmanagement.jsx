@@ -8,13 +8,13 @@ export default function OurManagement() {
       <div className="flex flex-col md:flex-row shadow-lg h-auto md:h-140">
 
         {/* Left Section - 2/6 */}
-        <div className="w-full md:w-2/6 bg-[#132c4b] flex items-center justify-center p-2">
+        <div className="w-full xl:w-2/9 bg-[#132c4b] flex items-center justify-center pl-1">
        <Image
   src="/home/president.png"
   alt="President"
-  width={500} // (optional, still helps with layout)
-  height={400}
-  className="h-60 md:h-85 w-72 md:w-[800px] z-10 ml-0 sm:ml-50 md:ml-70"
+  width={530} // (optional, still helps with layout)
+  height={521}
+  className="h-80 md:h-[400px] w-72 md:w-[800px] z-10 ml-0 sm:ml-50 md:ml-70"
 />
 </div>
         {/* Right Section - 5/6 */}
@@ -46,12 +46,12 @@ export default function OurManagement() {
         </div>
         
         {/* Left Section - 2/6 */}
-        <div className="w-full md:w-2/6 bg-[#132c4b] flex items-center justify-center p-2 order-1 md:order-2">
+        <div className="w-full xl:w-2/9 bg-[#132c4b] flex items-center justify-center p-2 order-1 md:order-2">
           <Image
             src="/home/chairman.png"
             alt="Chairman"
             width={500}
-            height={400}
+            height={550}
             className="left-1/2 h-60 md:h-85 z-10 mr-0 md:mr-60"
           />
         </div>
@@ -62,12 +62,12 @@ export default function OurManagement() {
       <div className="flex flex-col md:flex-row shadow-lg h-auto md:h-130">
 
         {/* Left Section - 2/6 */}
-        <div className="w-full md:w-2/6 bg-[#132c4b] flex items-center justify-center p-2">
+        <div className="w-full xl:w-2/9 bg-[#132c4b] flex items-center justify-center p-2">
           <Image
             src="/home/principle.png"
             alt="Principal"
-            width={400}
-            height={400}
+            width={613}
+            height={546}
             className="left-1/2 h-60 md:h-85 z-10 ml-0 md:ml-60"
           />
         </div>

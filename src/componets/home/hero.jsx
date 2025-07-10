@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <main className="relative">
-      {/* 🖼️ Banner with Overlay - Reduced Height */}
+      {/* 🖼️ Banner with Overlay */}
       <div className="relative h-[85vh] w-full bg-gray-100">
         {/* Background Image */}
         <div className="relative h-[85vh] w-full">
@@ -18,15 +18,14 @@ export default function Hero() {
           />
         </div>
 
-        {/* Transparent Black Overlay */}
-     <div
-          className="absolute inset-0 bg-gradient-to-r from-[#1F2A44]/70 via-[#1F2A44]/50 to-[#1F2A44]/30"
-        />
+        {/* Transparent Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1F2A44]/70 via-[#1F2A44]/50 to-[#1F2A44]/30" />
 
-        {/* Overlay Text - Positioned like the reference image */}
+        {/* Text Content with Animations */}
         <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-12">
-          {/* Top Text */}
-          <div className="text-left">
+          
+          {/* Top Heading */}
+          <div className="text-left animate-slide-up">
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Start Your <span className="text-white">Beautiful</span> And
               <br />
@@ -34,15 +33,13 @@ export default function Hero() {
             </h1>
           </div>
 
-         {/* Bottom Text */}
-<div className="text-left -mt-6">
-  <p className="text-[#FFD700] text-xl sm:text-2xl md:text-5xl font-semibold max-w-5xl leading-tight">
-    <span className="block">Shaping careers with hands-on training,</span>
-    <span className="block mt-2">industry-ready skills, and expert guidance.</span>
-  </p>
-</div>
-
-
+          {/* Bottom Paragraph */}
+          <div className="text-left -mt-6 animate-fade-in delay-300">
+            <p className="text-[#FFD700] text-xl sm:text-2xl md:text-5xl font-semibold max-w-5xl leading-tight">
+              <span className="block">Shaping careers with hands-on training,</span>
+              <span className="block mt-2">industry-ready skills, and expert guidance.</span>
+            </p>
+          </div>
         </div>
       </div>
     </main>

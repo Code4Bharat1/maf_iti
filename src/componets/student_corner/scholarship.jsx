@@ -40,8 +40,8 @@ export default function ScholarshipPage() {
         </div>
         
         {/* Heading */}
-        <h1 className="text-yellow-400 font-bold text-2xl sm:text-3xl md:text-5xl break-words absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-10 md:left-0 md:mx-20 z-10 max-w-[calc(100%-2rem)] sm:max-w-[calc(100%-3rem)] md:max-w-none">
-          Scholarship Opportunities
+        <h1 className="flex flex-col text-yellow-400 font-bold text-2xl sm:text-3xl md:text-5xl break-words absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-10 md:left-0 md:mx-20 z-10 max-w-[calc(100%-2rem)] sm:max-w-[calc(100%-3rem)] md:max-w-none">
+          <span>Scholarship</span><span>Opportunities</span>
         </h1>
       </div>
 

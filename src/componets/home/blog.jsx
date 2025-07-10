@@ -52,7 +52,7 @@ export default function BlogSection() {
                 onClick={() => handlePostClick(post.name)}
                 className="cursor-pointer bg-[#1A3161] rounded-md text-center hover:scale-[1.02] transition-transform duration-300"
               >
-                <Image
+                <img
   src={post.image ? post.image : '/placeholder.png'}
   alt="Blog"
   width={400}
