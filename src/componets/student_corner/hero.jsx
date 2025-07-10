@@ -1,35 +1,43 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Image from 'next/image';
 
 export default function StudentCorner() {
-  const toppers = [
-    {
-      name: 'Hassan Salim Shaikh',
-      trade: 'Computer Operator and Programming Assistant (COPA)',
-      percentage: '91.16%',
-    },
-    {
-      name: 'Varad Jagdish Gurav',
-      trade: 'Draughtman (Civil)',
-      percentage: '85.33%',
-    },
-    {
-      name: 'Mufeez Moin Shaban',
-      trade: 'Draughtman (Mechanical)',
-      percentage: '72.83%',
-    },
-    {
-      name: 'Saurabh Tanaji Talape',
-      trade: 'Marine Fitter',
-      percentage: '91.00%',
-    },
-    {
-      name: 'Surve Devendra Jitendra',
-      trade: 'Refrigeration and Air Conditioning Technician',
-      percentage: '87.16%',
-    },
-  ];
+  const [toppers, setToppers] = useState([]);
+
+  useEffect(() => {
+    const fetchToppers = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const res = await axios.get(
+          "http://localhost:5000/api/admin/toppers/getTopper",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        setToppers(res.data);
+      } catch (err) {
+        console.error("Error fetching toppers:", err);
+      }
+    };
+
+    fetchToppers();
+  }, []);
+
+  // return (
+  //   <div className="bg-gradient-to-br from-[#f4f8ff] via-[#f0f6ff] to-[#e8f4ff] min-h-screen p-3 sm:p-6">
+  //     {/* rest of your existing JSX here */}
+      
+  //     {/* The table/cards already map over `toppers` */}
+  //   </div>
+  // );
+
+
+
 
   return (
     <div className="bg-gradient-to-br from-[#f4f8ff] via-[#f0f6ff] to-[#e8f4ff] min-h-screen p-3 sm:p-6">
@@ -100,7 +108,7 @@ export default function StudentCorner() {
               {toppers.map((student, index) => (
                 <tr key={index} className="text-center font-normal text-sm md:text-xl bg-gradient-to-r from-white via-[#f8faff] to-white text-gray-900 border-b border-gray-900 last:border-b-0 hover:from-[#f0f6ff] hover:via-[#e8f4ff] hover:to-[#f0f6ff] transition-all duration-300 transform hover:scale-[1.01] hover:shadow-lg group">
                   <td className="p-2 md:p-4 border-r border-gray-900 relative">
-                    <span className="relative z-10">{student.name}</span>
+                    <span className="relative z-10">{student.studentName}</span>
                   </td>
                   <td className="p-2 md:p-4 border-r border-gray-900 relative">
                     <span className="relative z-10">{student.trade}</span>
