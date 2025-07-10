@@ -37,7 +37,6 @@ export default function ContactSection() {
     setIsSubmitting(true);
     setSubmitStatus("");
 
-    // Validation unchanged
     if (!formData.name || !formData.email || !formData.mobile || !formData.message) {
       setSubmitStatus("validation");
       setIsSubmitting(false);
@@ -55,8 +54,7 @@ export default function ContactSection() {
       return;
     }
 
-    // Your existing form submission logic here (unchanged)
-    // ...
+    // Backend untouched
   }
 
   return (
@@ -69,46 +67,43 @@ export default function ContactSection() {
         className="max-w-6xl mx-auto bg-cover bg-center overflow-hidden relative flex flex-col md:flex-row shadow-lg"
         style={{ backgroundImage: "url('/contactus/class.png')" }}
       >
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-[#1F2A44]/80 via-[#1F2A44]/60 to-[#1F2A44]/40"
-          aria-hidden="true"
-        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1F2A44]/80 via-[#1F2A44]/60 to-[#1F2A44]/40" />
 
-        {/* Left contact info */}
-        <div className="flex-1 text-white p-16 relative z-10 space-y-6 text-center text-2xl">
-          {/* Address */}
-          <div className="flex flex-col items-center space-y-4">
+        {/* Contact Info (Left) */}
+        <div className="flex-1 text-white p-12 md:p-16 relative z-10 flex flex-col justify-center space-y-8 text-2xl">
+          {/* Address - side by side */}
+          <div className="flex items-start space-x-4">
             <div className="bg-yellow-400 rounded-full p-3">
               <FaMapMarkerAlt className="text-white text-3xl" />
             </div>
-            <p>
-              Mazgaon, Taluka Murud, <br />
-              District Raigad, <br />
+            <div className="leading-snug">
+              Mazgaon, Taluka Murud,<br />
+              District Raigad,<br />
               Maharashtra – 402401
-            </p>
+            </div>
           </div>
 
           {/* Email */}
-          <div className="flex flex-col items-center space-y-4">
+          <div className="flex items-center space-x-4">
             <div className="bg-yellow-400 rounded-full p-3">
               <FaEnvelope className="text-white text-3xl" />
             </div>
-            <p>awtmtaft@gmail.com</p>
+            <p className="leading-snug">awtmtaft@gmail.com</p>
           </div>
 
           {/* Phone */}
-          <div className="flex flex-col items-center space-y-4">
+          <div className="flex items-center space-x-4">
             <div className="bg-yellow-400 rounded-full p-3">
               <FaPhone className="text-white text-3xl" />
             </div>
-            <p>+91 8983508919</p>
+            <p className="leading-snug">+91 8983508919</p>
           </div>
         </div>
 
-        {/* Contact form */}
+        {/* Contact Form (Right) */}
         <form
           onSubmit={handleSubmit}
-          className="flex-1 p-8 relative z-10 mx-10 space-y-4"
+          className="flex-1 p-8 relative z-10 mx-6 md:mx-10 space-y-4"
         >
           <input
             type="text"
@@ -155,8 +150,7 @@ export default function ContactSection() {
             required
           />
 
-          {/* Status messages */}
-          {/* Your existing status messages here */}
+          {/* Status messages (same as before) */}
 
           <div className="flex justify-center">
             <button
