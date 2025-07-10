@@ -59,14 +59,12 @@ export default function Faculty() {
       bio: "Experienced in technical education and training.",
     },
   ];
-
-  return (
-    <section className="bg-[#f4f8ff] py-12 font-poppins">
+ return (
+    <section className="bg-[#f4f8ff] py-6 font-poppins">
       <h2 className="text-5xl font-extrabold text-center text-[#1F2A44] mb-10">
         Our Faculty
       </h2>
 
-      {/* GRID for desktop, SCROLL for mobile */}
       <div className={`w-full ${isMobile ? 'overflow-x-scroll' : ''}`}>
         <div className={`${isMobile ? 'flex gap-6 px-4 pb-4' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4'} max-w-7xl mx-auto`}>
           {facultyMembers.map((member, index) => (
@@ -74,20 +72,20 @@ export default function Faculty() {
               key={index}
               onMouseEnter={() => !isMobile && setHoveredIndex(index)}
               onMouseLeave={() => !isMobile && setHoveredIndex(null)}
-              className={`relative ${isMobile ? 'w-[280px] flex-shrink-0' : 'w-full max-w-[300px] mx-auto'} h-[400px]`}
+              className={`relative ${isMobile ? 'w-[280px] flex-shrink-0' : 'w-full max-w-[300px] mx-auto'} h-[470px]`}
             >
-              {/* Card background */}
+              {/* Yellow Box */}
               <div
                 className={`absolute left-1/2 transform -translate-x-1/2 rounded-2xl shadow-xl transition-all duration-300 overflow-hidden ${
                   hoveredIndex === index
-                    ? "bg-yellow-400 w-[310px] h-[420px] top-2"
-                    : "bg-yellow-300 w-[280px] h-[320px] top-16"
+                    ? "bg-yellow-400 w-[310px] h-[400px] top-2"
+                    : "bg-yellow-300 w-[280px] h-[390px] top-10"
                 }`}
               />
 
-              {/* Image container */}
+              {/* Image */}
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-20">
-                <div className="relative w-[200px] h-[209px] rounded-lg overflow-hidden ">
+                <div className="relative w-[200px] h-[200px] rounded-lg overflow-hidden">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -98,21 +96,17 @@ export default function Faculty() {
                 </div>
               </div>
 
-              {/* Content */}
-              <div className={`absolute left-1/2 transform -translate-x-1/2 bg-[#2D314A] rounded-xl px-3 py-4 z-30 transition-all duration-300 ${
-                hoveredIndex === index ? 'top-49 w-[220px]' : 'top-52 w-[220px]'
-              }`}>
-                <div className="text-center text-[#FFDF35]">
-                  <h3 className="text-xl font-medium leading-tight mb-1">{member.name}</h3>
-                  <p className="font-semibold text-xl text-[#FFDF35] mb-1">{member.title}</p>
-                  <p className="text-sm text-white text-[#FFDF35] mx-2 mb-0">{member.experience}</p>
-                  
-                  {(hoveredIndex === index || isMobile) && (
-                    <div className="mt-2 pt-2 ">
-                      <p className="text-xs text-gray-300 break-words leading-relaxed">{member.bio}</p>
-                    </div>
-                  )}
-                </div>
+              {/* Blue Info Box */}
+              <div className="absolute top-[200px] left-1/2 transform -translate-x-1/2 bg-[#2D314A] w-[240px] min-h-[120px] rounded-xl px-3 py-3 z-30 flex flex-col items-center justify-center text-center text-[#FFDF35]">
+                <h3 className="text-xl font-medium mb-1">{member.name}</h3>
+                <p className="font-semibold text-lg mb-1">{member.title}</p>
+                <p className="text-sm">{member.experience}</p>
+
+                {(hoveredIndex === index || isMobile) && (
+                  <div className="mt-2 pt-1">
+                    <p className="text-xs text-gray-300 px-1">{member.bio}</p>
+                  </div>
+                )}
               </div>
             </div>
           ))}

@@ -43,9 +43,6 @@ export default function FacultyGridWithHover() {
     
 
           
-      
-
-  
 {/* Non-Teaching Staff Section */}
 <h2 className="text-4xl font-extrabold text-center text-[#1F2A44] mb-10">
   Non-Teaching Staff
@@ -69,31 +66,27 @@ export default function FacultyGridWithHover() {
       />
 
       {/* Staff Image */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-30">
-        <div
-          className={`relative transition-all duration-300 rounded-md overflow-hidden ${
-            hoveredIndex === index ? "w-[200px] h-[210px]" : "w-[180px] h-[190px]"
-          }`}
-        >
-          <Image
-            src={staff.image}
-            alt={staff.name}
-            fill
-            className="object-contain object-top"
-          />
-        </div>
-      </div>
+      {/* Image Container */}
+<div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-20">
+  <div className="relative w-[200px] h-[200px] rounded-lg overflow-hidden">
+    <Image
+      src={staff.image}
+      alt={staff.name}
+      fill
+      className="object-cover object-center"
+    />
+  </div>
+</div>
 
-      {/* Blue Info Box - aligned directly under image */}
-      <div
-        className={`absolute left-1/2 transform -translate-x-1/2 bg-[#1F2A44] text-white rounded-xl px-6 py-5 z-20 transition-all duration-300 ${
-          hoveredIndex === index ? "top-[210px] w-[280px]" : "top-[190px] w-[260px]"
-        } text-center`}
-      >
-        <p className="text-lg font-bold text-[#FFE033]">{staff.name}</p>
-        <p className="text-base font-semibold text-yellow-200">{staff.role}</p>
-        <p className="text-xs mt-1 text-white">{staff.experience}</p>
-      </div>
+{/* Blue Info Box - Just below image */}
+<div
+  className={`absolute top-[200px] left-1/2 transform -translate-x-1/2 bg-[#1F2A44] text-white rounded-xl px-5 py-4 z-30 w-[260px] text-center`}
+>
+  <p className="text-lg font-bold text-[#FFE033]">{staff.name}</p>
+  <p className="text-base font-semibold text-yellow-200">{staff.role}</p>
+  <p className="text-xs mt-1">{staff.experience}</p>
+</div>
+
     </div>
   ))}
 </div>

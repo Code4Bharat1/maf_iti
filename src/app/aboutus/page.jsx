@@ -11,11 +11,7 @@ export default function page() {
     <div>
       <AboutUsPage/>
       <OurManagement/>
-      <ManagementCommittee/>
-     
-     
-   
-      
+      <ManagementCommittee/>      
     </div>
   )
 }

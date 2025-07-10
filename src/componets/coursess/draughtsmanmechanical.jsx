@@ -27,7 +27,7 @@ export default function DraughtsmanMechanical() {
         {/* Left Side - Image & Title */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-start">
         <div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a264f] mb-3 sm:mb-4">Draughtsman Mechanical</h2>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1F2A44] mb-3 sm:mb-4">Draughtsman Mechanical</h2>
           <Image
             src="/courses/course1.png"
             alt="Draughtsman Civil"
@@ -44,7 +44,7 @@ export default function DraughtsmanMechanical() {
           </p>
           </div>
           <div className="mt-6 sm:mt-7 md:mt-8">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#1F2A44] mb-3 sm:mb-4 underline">Key Learning :</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold text-[#1F2A44] mb-3 sm:mb-4 underline">Key Learning :</h3>
             <ul className="list-disc font-[Lateef] font-semibold text-xs sm:text-sm md:text-xl md:whitespace-nowrap list-inside space-y-2 sm:space-y-3 md:space-y-4 text-gray-900">
               <li> Construct free hand sketches of simple machine parts with correct proportions.</li>
               <li> Draw isometric projection from orthographic views(and vice versa) and Draw oblique projection from orthographic views.</li>

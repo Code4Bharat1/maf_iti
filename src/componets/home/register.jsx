@@ -33,7 +33,7 @@ export default function Home() {
             boxShadow: '0 10px 25px rgba(16, 185, 129, 0.3)',
           },
         });
-        e.target.reset(); // Clear the form
+        e.target.reset();
       } else {
         toast.error('❌ Submission Failed! Please try again.', {
           duration: 4000,
@@ -70,40 +70,38 @@ export default function Home() {
 
   return (
     <>
-      {/* Toast Container */}
       <Toaster />
-      
+
       {/* Desktop View */}
       <div
         className="hidden lg:flex relative min-h-[32rem] bg-cover bg-center items-center justify-between px-10"
         style={{ backgroundImage: "url('/home/contactus.png')" }}
       >
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1F2A44]/70 via-[#1F2A44]/50 to-[#1F2A44]/30 z-0" />
 
-        {/* Left Side Text */}
-        <div className="relative z-10 text-white text-center max-w-2xl mx-auto space-y-6 px-4 py-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold">Register Now!</h1>
+        {/* Slightly Left-Aligned Text */}
+        <div className="relative z-10 w-full flex flex-col items-start text-left max-w-2xl px-8 py-12 space-y-10">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white">Register Now!</h1>
 
-          <p className="text-2xl md:text-4xl font-bold text-[#FFD700]">
+          <p className="text-3xl md:text-4xl font-bold text-[#FFD700]">
             "Take the First Step Toward
             <br />
-            <span className="text-[#FFD700] font-extrabold text-4xl block mt-1">
+            <span className="text-4xl md:text-5xl font-extrabold block mt-2">
               Success"
             </span>
           </p>
 
-          <div className="space-y-4 text-lg mt-20">
-            <div className="flex items-center justify-start space-x-3">
-              <div className="bg-yellow-400 text-white p-2 rounded-full">
-                <MdEmail className="text-2xl" />
+          <div className="flex flex-col items-start space-y-6">
+            <div className="flex items-center space-x-4">
+              <div className="bg-yellow-400 text-white p-3 rounded-full">
+                <MdEmail className="text-3xl" />
               </div>
               <span className="text-white text-2xl">awtmaft@gmail.com</span>
             </div>
 
-            <div className="flex items-center justify-start space-x-3">
-              <div className="bg-yellow-400 text-white p-2 rounded-full">
-                <BsTelephone className="text-2xl" />
+            <div className="flex items-center space-x-4">
+              <div className="bg-yellow-400 text-white p-3 rounded-full">
+                <BsTelephone className="text-3xl" />
               </div>
               <span className="text-white text-2xl">+91 8983508919</span>
             </div>
@@ -111,77 +109,49 @@ export default function Home() {
         </div>
 
         {/* Form */}
-        <div className="relative z-10 bg-white p-6 rounded-r-4xl rounded-t-4xl shadow-[0_2px_4px_0_rgba(195,195,195,0.8)] w-full max-w-sm p-14 mr-40">
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-5 w-full max-w-xs mx-auto"
-          >
-            {/* Web3Forms Access Key */}
-            <input
-              type="hidden"
-              name="access_key"
-              value="81580f00-4589-4c21-b377-2cfd3cf0e5b3"
-            />
+        <div className="relative z-10 bg-white p-14 rounded-r-4xl rounded-t-4xl shadow-[0_2px_4px_0_rgba(195,195,195,0.8)] w-full max-w-sm mr-40">
+          <form onSubmit={handleSubmit} className="space-y-5 w-full max-w-xs mx-auto">
+            <input type="hidden" name="access_key" value="81580f00-4589-4c21-b377-2cfd3cf0e5b3" />
+            <input type="hidden" name="subject" value="New Course Registration - Contact Form Submission" />
+            <input type="hidden" name="from_name" value="Course Registration Form" />
 
-            {/* Email Subject */}
-            <input
-              type="hidden"
-              name="subject"
-              value="New Course Registration - Contact Form Submission"
-            />
-
-            {/* Email Template */}
-            <input
-              type="hidden"
-              name="from_name"
-              value="Course Registration Form"
-            />
-
-            {/* Name */}
             <input
               type="text"
               name="name"
               placeholder="Your name"
               required
               disabled={isSubmitting}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed placeholder-black text-black"
             />
 
-            {/* Phone */}
             <input
               type="tel"
               name="phone"
               placeholder="Phone Number"
               required
               disabled={isSubmitting}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed placeholder-black text-black"
             />
 
-            {/* Course */}
             <select
               name="course"
               required
               disabled={isSubmitting}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed text-black"
             >
               <option value="">Select Course</option>
               <option value="Draughtsman Civil">Draughtsman Civil</option>
-              <option value="Draughtsman Mechanical">Draughtsman Mechanical</option>  
+              <option value="Draughtsman Mechanical">Draughtsman Mechanical</option>
               <option value="Copa">Computer Operator & Programming Assistant (COPA)</option>
               <option value="marine filter">Marine Fitter</option>
               <option value="ract">Refrigeration & Air Conditioning Technician (RACT)</option>
               <option value="Mechanical Fitter">Mechanical Fitter</option>
-              <option value="Marine Electrician">Marine Electrician</option>  
+              <option value="Marine Electrician">Marine Electrician</option>
               <option value="Marine Welder">Marine Welder</option>
             </select>
 
-            {/* Hidden field to customize email format */}
-            <input
-              type="hidden"
-              name="message"
-              value="New registration received with the following details:"
-            />
-            
+            <input type="hidden" name="message" value="New registration received with the following details:" />
+
             <button
               type="submit"
               disabled={isSubmitting}
@@ -201,14 +171,7 @@ export default function Home() {
                       viewBox="0 0 24 24"
                       fill="none"
                     >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      />
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                       <path
                         className="opacity-75"
                         fill="currentColor"
@@ -228,15 +191,12 @@ export default function Home() {
 
       {/* Mobile/Tablet View */}
       <div className="lg:hidden">
-        {/* Hero Section */}
         <div
           className="relative min-h-[20rem] bg-cover bg-center flex items-center justify-center px-4"
           style={{ backgroundImage: "url('/home/contactus.png')" }}
         >
-          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#1F2A44]/80 via-[#1F2A44]/70 to-[#1F2A44]/60 z-0" />
 
-          {/* Hero Content */}
           <div className="relative z-10 text-white text-center space-y-4 px-4 py-8">
             <h1 className="text-3xl sm:text-4xl font-extrabold">Register Now!</h1>
             <p className="text-xl sm:text-2xl font-bold text-[#FFD700]">
@@ -249,7 +209,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Contact Info Section */}
         <div className="bg-[#1F2A44] py-6 px-4">
           <div className="max-w-md mx-auto space-y-4">
             <div className="flex items-center justify-center space-x-3">
@@ -268,76 +227,50 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Form Section */}
         <div className="bg-gray-50 py-8 px-4">
           <div className="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Web3Forms Access Key */}
-              <input
-                type="hidden"
-                name="access_key"
-                value="81580f00-4589-4c21-b377-2cfd3cf0e5b3"
-              />
+              <input type="hidden" name="access_key" value="81580f00-4589-4c21-b377-2cfd3cf0e5b3" />
+              <input type="hidden" name="subject" value="New Course Registration - Contact Form Submission" />
+              <input type="hidden" name="from_name" value="Course Registration Form" />
 
-              {/* Email Subject */}
-              <input
-                type="hidden"
-                name="subject"
-                value="New Course Registration - Contact Form Submission"
-              />
-
-              {/* Email Template */}
-              <input
-                type="hidden"
-                name="from_name"
-                value="Course Registration Form"
-              />
-
-              {/* Name */}
               <input
                 type="text"
                 name="name"
                 placeholder="Your name"
                 required
                 disabled={isSubmitting}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed text-base"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed placeholder-black text-black"
               />
 
-              {/* Phone */}
               <input
                 type="tel"
                 name="phone"
                 placeholder="Phone Number"
                 required
                 disabled={isSubmitting}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed text-base"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed placeholder-black text-black"
               />
 
-              {/* Course */}
               <select
                 name="course"
                 required
                 disabled={isSubmitting}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed text-base"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed text-black"
               >
                 <option value="">Select Course</option>
                 <option value="Draughtsman Civil">Draughtsman Civil</option>
-                <option value="Draughtsman Mechanical">Draughtsman Mechanical</option>  
+                <option value="Draughtsman Mechanical">Draughtsman Mechanical</option>
                 <option value="Copa">Computer Operator & Programming Assistant (COPA)</option>
                 <option value="marine filter">Marine Fitter</option>
                 <option value="ract">Refrigeration & Air Conditioning Technician (RACT)</option>
                 <option value="Mechanical Fitter">Mechanical Fitter</option>
-                <option value="Marine Electrician">Marine Electrician</option>  
+                <option value="Marine Electrician">Marine Electrician</option>
                 <option value="Marine Welder">Marine Welder</option>
               </select>
 
-              {/* Hidden field to customize email format */}
-              <input
-                type="hidden"
-                name="message"
-                value="New registration received with the following details:"
-              />
-              
+              <input type="hidden" name="message" value="New registration received with the following details:" />
+
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -352,19 +285,8 @@ export default function Home() {
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">
-                      <svg
-                        className="animate-spin h-5 w-5 text-white"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        />
+                      <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                         <path
                           className="opacity-75"
                           fill="currentColor"

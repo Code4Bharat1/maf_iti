@@ -61,11 +61,12 @@ export default function TradesPage() {
         ))}
       </div>
 
-      {/* Admission Process Section */}
+{/* Admission Process Section */}
 <div className="bg-[#F4F8FC] py-10 px-4">
   <h3 className="text-4xl font-extrabold text-center text-[#1F2C56] mb-8">
-        Admission Process
-      </h3>
+    Admission Process
+  </h3>
+
   <div className="max-w-2xl mx-auto space-y-10">
     {[
       {
@@ -94,7 +95,7 @@ export default function TradesPage() {
       const isFirst = index === 0;
 
       return (
-        <div key={index} className="relative">
+        <div key={index} className="relative z-10">
           {/* White Top Arrow — skip for first item */}
           {!isFirst && (
             <div
@@ -106,33 +107,43 @@ export default function TradesPage() {
             />
           )}
 
-        {/* Main Box */}
-<div className="bg-[#102645] text-white px-10 py-8 rounded-lg shadow-lg flex flex-col md:flex-row items-start md:items-center gap-6">
-  <div className="text-3xl font-bold text-white">{item.step}</div>
-  <div className="w-full text-center">
-    <h3 className="text-[#FFD700] font-extrabold text-1xl uppercase tracking-wide underline mb-2">
-      {item.title}
-    </h3>
-    <p className="text-white text-lg">{item.description}</p>
-  </div>
-</div>
+          {/* Main Box */}
+          <div className="bg-[#102645] text-white px-10 py-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6">
+            <div
+              className="text-[26px] text-white font-bold"
+              style={{ fontFamily: ['Protest Riot'] }} // Apply the font here
+            >
+              {item.step}
+            </div>
 
+            <div className="w-full flex flex-col items-center text-center -mt-2">
+              <h3 className="text-yellow-500 font-bold text-[20px] uppercase tracking-wide underline mb-1">
+                {item.title}
+              </h3>
+              <p className="text-white text-[18px] leading-snug">
+                {item.description}
+              </p>
+            </div>
+          </div>
 
           {/* Bottom Blue Arrow — skip for last item */}
           {!isLast && (
-            <div
-              className={`absolute bottom-[-30px] w-0 h-0 
-                border-l-[30px] border-l-transparent 
-                border-r-[30px] border-r-transparent 
-                border-t-[50px] border-t-[#102645] 
-                ${isEven ? 'left-4 md:left-9' : 'right-4 md:right-9'}`}
-            />
+            <div className="relative z-10">
+              <div
+                className={`absolute bottom-[-30px] w-0 h-0 
+                  border-l-[30px] border-l-transparent 
+                  border-r-[30px] border-r-transparent 
+                  border-t-[50px] border-t-[#102645] 
+                  ${isEven ? 'left-4 md:left-9' : 'right-4 md:right-9'}`}
+              />
+            </div>
           )}
         </div>
       );
     })}
   </div>
 </div>
+
 
 
 
@@ -158,27 +169,26 @@ export default function TradesPage() {
 
 
 
-
-      {/* Trades Offered Table */}
-    <h2 className="text-4xl font-extrabold text-center mt-16 mb-8 text-blue">
+{/* Trades Offered Table */}
+<h2 className="text-4xl font-extrabold text-center mt-16 mb-8 text-blue">
   Trades Offered by Our Institute
 </h2>
 
-<div className="overflow-x-auto w-full px-2">
-  <div className="max-w-[1500px] mx-auto overflow-hidden rounded-lg shadow-lg"> {/* Shadow added here */}
+<div className="w-full px-1 md:px-2">
+  <div className="mx-auto max-w-[1400px] overflow-hidden rounded-lg shadow-lg">
     <table
-      className="w-full text-sm text-center border-separate"
+      className="w-full text-center text-[20px] border-separate"
       style={{ borderSpacing: 0 }}
     >
-      <thead className="bg-[#1F2C56] text-white text-xl">
-        <tr>
-          <th className="px-4 py-3 border-r border-black">Trade Name</th>
-          <th className="px-4 py-3 border-r border-black">Trade Type</th>
-          <th className="px-4 py-3 border-r border-black">Eligibility</th>
-          <th className="px-4 py-3">Duration</th>
+      <thead className="bg-[#1F2C56] text-white font-bold">
+        <tr className="h-[70px]">
+          <th className="px-6 py-4 border-r border-black">Trade Name</th>
+          <th className="px-6 py-4 border-r border-black">Trade Type</th>
+          <th className="px-6 py-4 border-r border-black">Eligibility</th>
+          <th className="px-6 py-4">Duration</th>
         </tr>
       </thead>
-      <tbody className="bg-[#BAC7E5] text-black font-bold text-xl">
+      <tbody className="bg-[#BAC7E5] text-black font-semibold">
         {[
           [
             <>
@@ -202,11 +212,11 @@ export default function TradesPage() {
           ["Draughtsman Civil", "Engineering", "10th Passed", "2 Years"],
           ["Marine Fitter", "Engineering", "10th Passed", "2 Years"],
         ].map(([name, type, eligibility, duration], index) => (
-          <tr key={index} className="min-h-[40px]">
-            <td className="px-4 py-3 border-r border-black">{name}</td>
-            <td className="px-4 py-3 border-r border-black">{type}</td>
-            <td className="px-4 py-3 border-r border-black">{eligibility}</td>
-            <td className="px-4 py-3">{duration}</td>
+          <tr key={index} className="h-[70px]">
+            <td className="px-6 py-4 border-r border-black">{name}</td>
+            <td className="px-6 py-4 border-r border-black">{type}</td>
+            <td className="px-6 py-4 border-r border-black">{eligibility}</td>
+            <td className="px-6 py-4">{duration}</td>
           </tr>
         ))}
       </tbody>

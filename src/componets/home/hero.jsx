@@ -34,14 +34,15 @@ export default function Hero() {
             </h1>
           </div>
 
-          {/* Bottom Text */}
-          <div className="text-left">
-            <p className="text-[#FFD700] text-lg sm:text-xl md:text-4xl font-semibold max-w-3xl">
-              Shaping careers with hands-on training,
-              <br />
-              industry-ready skills, and expert guidance.
-            </p>
-          </div>
+         {/* Bottom Text */}
+<div className="text-left -mt-6">
+  <p className="text-[#FFD700] text-xl sm:text-2xl md:text-5xl font-semibold max-w-5xl leading-tight">
+    <span className="block">Shaping careers with hands-on training,</span>
+    <span className="block mt-2">industry-ready skills, and expert guidance.</span>
+  </p>
+</div>
+
+
         </div>
       </div>
     </main>

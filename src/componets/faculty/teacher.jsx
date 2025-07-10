@@ -108,7 +108,7 @@ export default function Faculty1() {
 
               {/* Image container */}
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-20">
-                <div className="relative w-[200px] h-[209px] rounded-lg overflow-hidden ">
+                <div className="relative w-[200px] h-[200px] rounded-lg overflow-hidden ">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -119,21 +119,17 @@ export default function Faculty1() {
                 </div>
               </div>
 
-              {/* Content */}
-              <div className={`absolute left-1/2 transform -translate-x-1/2 bg-[#2D314A] rounded-xl px-3 py-4 z-30 transition-all duration-300 ${
-                hoveredIndex === index ? 'top-49 w-[220px]' : 'top-52 w-[220px]'
-              }`}>
-                <div className="text-center text-[#FFDF35]">
-                  <h3 className="text-xl font-medium leading-tight mb-1">{member.name}</h3>
-                  <p className="font-semibold text-xl text-[#FFDF35] mb-1">{member.title}</p>
-                  <p className="text-sm text-white text-[#FFDF35] mx-2 mb-0">{member.experience}</p>
-                  
-                  {(hoveredIndex === index || isMobile) && (
-                    <div className="mt-2 pt-2 ">
-                      <p className="text-xs text-gray-300 break-words leading-relaxed">{member.bio}</p>
-                    </div>
-                  )}
-                </div>
+              {/* Blue Box Info */}
+              <div className="absolute top-[170px] left-1/2 transform -translate-x-1/2 bg-[#2D314A] w-[240px] min-h-[120px] rounded-xl px-3 py-3 z-30 flex flex-col items-center justify-center text-center text-[#FFDF35]">
+                <h3 className="text-xl font-medium mb-1">{member.name}</h3>
+                <p className="font-semibold text-lg mb-1">{member.title}</p>
+                <p className="text-sm">{member.experience}</p>
+
+                {(hoveredIndex === index || isMobile) && (
+                  <div className="mt-2 pt-1">
+                    <p className="text-xs text-gray-300 px-1">{member.bio}</p>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -150,9 +146,7 @@ export default function Faculty1() {
             </svg>
           </div>
         </div>
-      )}
-
-      
+      )}  
     </section>
   );
 }
