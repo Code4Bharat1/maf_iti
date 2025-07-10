@@ -105,15 +105,25 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Right side: Only logout if logged in */}
-        {isLoggedIn && (
-          <button
-            onClick={handleLogout}
-            className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm"
-          >
-            Logout
-          </button>
-        )}
+        {/* Right side: Admin Login or Logout */}
+        <div className="flex items-center space-x-4">
+          {!isLoggedIn && (
+            <button
+              onClick={() => handleNavigation("http://localhost:3000")}
+              className="bg-yellow-500 hover:bg-yellow-500 text-black px-3 py-1 rounded text-sm"
+            >
+              Admin Login
+            </button>
+          )}
+          {isLoggedIn && (
+            <button
+              onClick={handleLogout}
+              className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm"
+            >
+              Logout
+            </button>
+          )}
+        </div>
       </div>
 
       <hr className="bg-white border border-white" />

@@ -27,18 +27,16 @@ export default function PlacementSection() {
     <div className="absolute inset-0 bg-gradient-to-r from-[#1F2A44]/70 via-[#1F2A44]/50 to-[#1F2A44]/30 rounded" />
   </div>
 </div>
+{/* 🟨 Yellow Card Overlapping both images */}
+<div className="hidden lg:block absolute left-[500px] top-[125px] z-10 w-[740px]">
+  <div className="bg-[#FFDF35] text-gray-900 px-10 py-20 rounded shadow-md">
+    <p className="text-[18px] xl:text-[25px] font-medium leading-relaxed">
+      At our college, we focus on nurturing each student's potential with dedicated placement support and skill-building programs. Through personalized training, industry exposure, and internship opportunities, we prepare students to confidently step into the professional world. Our growing network of recruiters and career guidance ensures that every student gets a fair shot at success.
+    </p>
+  </div>
+</div>
 
-      {/* Yellow Card Text */}
-      <div className="z-10 bg-[#FFDF35] text-gray-900 p-6 sm:p-8 lg:p-18 max-w-4xl rounded shadow-md mx-4 lg:mr-23 text-center lg:text-left">
-        <p className="text-sm sm:text-base lg:text-md xl:text-[26px] font-medium leading-relaxed">
-          At our college, we focus on nurturing each student's potential with
-          dedicated placement support and skill-building programs. Through
-          personalized training, industry exposure, and internship
-          opportunities, we prepare students to confidently step into the
-          professional world. Our growing network of recruiters and career
-          guidance ensures that every student gets a fair shot at success.
-        </p>
-      </div>
+
     </section>
   );
 }

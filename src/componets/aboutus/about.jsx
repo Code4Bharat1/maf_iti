@@ -7,7 +7,7 @@ export default function AboutUsPage() {
   return (
     <div className="bg-[#F1F7FF] text-gray-800 font-sans min-h-screen">
       {/* Banner Image */}
-      <div className="w-full">
+      <div className="mx-10">
         <Image
           src="/aboutus/img1.png"
           alt="Mehrunnisa Abbas Fakih ITI"
