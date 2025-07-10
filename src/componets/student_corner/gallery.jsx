@@ -1,6 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import { useRouter } from 'next/navigation';
 import { FaUserCircle } from 'react-icons/fa';
 import Image from 'next/image';
@@ -23,6 +25,26 @@ const testimonials = [
 ];
 
 export default function Eventgallery() {
+  const [galleryImages, setGalleryImages] = useState([]);
+
+useEffect(() => {
+  const fetchImages = async () => {
+    try {
+      const res = await axios.get('http://localhost:5000/api/admin/media/images');
+      if (Array.isArray(res.data)) {
+        setGalleryImages(res.data);
+      } else {
+        setGalleryImages([]);
+      }
+    } catch (err) {
+      console.error('Error fetching event gallery images:', err);
+      setGalleryImages([]);
+    }
+  };
+
+  fetchImages();
+}, []);
+
   const router = useRouter();
 
   return (
@@ -60,22 +82,19 @@ export default function Eventgallery() {
           Event Gallery
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-10">
-          <Image
-            src="/studentcorner/gallery1.png"
-            alt="Graduation Event"
-            width={600}
-            height={400}
-            className=" shadow-md w-full object-cover"
-          />
-          <Image
-            src="/studentcorner/gallery2.png"
-            alt="Seminar Event"
-            width={600}
-            height={400}
-            className=" shadow-md w-full object-cover"
-          />
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-10">
+  {galleryImages.slice(0, 2).map((image, index) => (
+    <Image
+      key={index}
+      src={image.imageUrl}  // ✅ Use your backend field
+      alt={`Event ${index + 1}`}
+      width={600}
+      height={400}
+      className="shadow-md w-full object-cover"
+    />
+  ))}
+</div>
+
 
         <button
           onClick={() => router.push('/gallery')}
