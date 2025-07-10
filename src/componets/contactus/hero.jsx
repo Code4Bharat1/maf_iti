@@ -37,24 +37,44 @@ export default function ContactSection() {
     setIsSubmitting(true);
     setSubmitStatus("");
 
+    // Validation
     if (!formData.name || !formData.email || !formData.mobile || !formData.message) {
       setSubmitStatus("validation");
       setIsSubmitting(false);
       return;
     }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setSubmitStatus("invalid_email");
       setIsSubmitting(false);
       return;
     }
+
     if (formData.mobile.length !== 10) {
       setSubmitStatus("invalid_mobile");
       setIsSubmitting(false);
       return;
     }
 
-    // Backend untouched
+    // Format the WhatsApp message
+    const whatsappMessage = `Hello, my name is ${formData.name}.%0AEmail: ${formData.email}%0AMobile: ${formData.mobile}%0AMessage: ${formData.message}`;
+
+    // Set the target WhatsApp number (include country code)
+    const whatsappNumber = "918983508919"; // Without '+' sign
+
+    // Redirect to WhatsApp
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.location.href = whatsappURL;
+
+    // Reset form (optional)
+    setFormData({
+      name: "",
+      email: "",
+      mobile: "",
+      message: "",
+    });
+    setIsSubmitting(false);
   }
 
   return (
