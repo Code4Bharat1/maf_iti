@@ -50,7 +50,7 @@ export default function VideoGallery() {
           <p className="text-center text-[#1a264f]">No videos available.</p>
         )}
 
-<div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 gap-6">
+{/* <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 gap-6">
   {videos.map((video) => (
     <div key={video._id} className="flex flex-col items-center gap-2">
       <div className="w-full rounded overflow-hidden shadow border border-gray-300">
@@ -63,6 +63,26 @@ export default function VideoGallery() {
    
     </div>
   ))}
+</div> */}
+     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+{videos.map((video) => (
+  <div key={video._id} className="flex flex-col items-center gap-2">
+    <div className="w-full rounded overflow-hidden shadow border border-gray-300">
+      <video
+        src={video.videoUrl} // ✅ Ensure full path
+        controls
+        className="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-contain bg-black"
+        onClick={(e) => {
+          if (e.target.readyState >= 2) {
+            e.target.play(); // ✅ Only play if video is loaded
+          }
+        }}
+      />
+    </div>
+ 
+  </div>
+))}
+
 </div>
 
 
