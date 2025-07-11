@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-export default function CoursesSection() {
+export default function OurTrade() {
   const router = useRouter();
 
   const courses = [
@@ -31,16 +31,16 @@ export default function CoursesSection() {
   return (
     <section className="bg-[#f3f8fe] py-12">
       <div className="max-w-7xl mx-auto px-4">
+        
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-[#1a264f]">
-          Our Courses
+          Our Trades
         </h2>
-
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           {courses.map((course, idx) => (
             <div
               key={idx}
               onClick={() => handleClick(course.route)}
-              className="cursor-pointer bg-white overflow-hidden shadow hover:shadow-lg transition rounded pt-4 pb-5 w-[50px]"
+              className="cursor-pointer bg-white overflow-hidden shadow hover:shadow-lg transition rounded"
             >
               <div className="relative w-full h-56">
                 <Image
@@ -50,7 +50,7 @@ export default function CoursesSection() {
                   className="object-cover"
                 />
               </div>
-              <div className="px-4 text-center text-[19px] font-semibold text-black mt-6 leading-snug">
+              <div className="p-12 mx-4 text-center text-2xl font-semibold text-black">
                 {course.title}
               </div>
             </div>
