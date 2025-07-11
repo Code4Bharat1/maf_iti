@@ -121,7 +121,7 @@ export default function Home() {
               placeholder="Your name"
               required
               disabled={isSubmitting}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed placeholder-black text-black"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed placeholder-gray-500 text-black"
             />
 
             <input
@@ -130,14 +130,14 @@ export default function Home() {
               placeholder="Phone Number"
               required
               disabled={isSubmitting}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed placeholder-black text-black"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed placeholder-gray-500 text-black"
             />
 
             <select
               name="course"
               required
               disabled={isSubmitting}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed text-black"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100 disabled:cursor-not-allowed text-gray-500"
             >
               <option value="">Select Course</option>
               <option value="Draughtsman Civil">Draughtsman Civil</option>

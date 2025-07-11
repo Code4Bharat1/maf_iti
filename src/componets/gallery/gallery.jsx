@@ -49,7 +49,6 @@ res.data.forEach(img => console.log(img));
     ) : null
   ))}
 </div>
-
     </div>
   );
 }
