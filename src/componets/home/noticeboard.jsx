@@ -5,24 +5,25 @@ import axios from 'axios';
 
 export default function NoticeNewsSection() {
   const [notices, setNotices] = useState([]);
+  const [news, setNews] = useState([]);
 
-  // ✅ Hard-coded news items
-  const news = [
-    "Workshop on Digital Marketing – 22nd June (Free for Students)",
-    "New Blog Published: “Top 5 Skills Every Student Should Learn in 2025”",
-    "Free webinar on Cyber Security – Register now"
-  ];
 
   useEffect(() => {
-    const FetchNotices = async () => {
+    const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/admin/notices");
-        setNotices(res.data || []);
+        const [noticeRes, newsRes] = await Promise.all([
+          axios.get('http://localhost:5000/api/admin/notices'),
+          axios.get('http://localhost:5000/api/admin/news'),
+        ]);
+
+        setNotices(noticeRes.data || []);
+        setNews(newsRes.data || []);
       } catch (err) {
-        console.error("Error fetching notices: ", err);
+        console.error('Error fetching notices or news:', err);
       }
     };
-    FetchNotices();
+
+    fetchData();
   }, []);
 
   return (
@@ -59,7 +60,7 @@ export default function NoticeNewsSection() {
           {news.map((item, index) => (
             <div key={index} className="flex gap-3">
               <span className="text-xl">•</span>
-              <span className="break-words">{item}</span>
+              <span className="break-words">{item.description}</span>
             </div>
           ))}
         </div>
