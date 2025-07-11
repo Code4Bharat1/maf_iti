@@ -54,16 +54,12 @@ export default function StudentTestimonials() {
   }, []);
 
   return (
-    <>
-    <div className='bg-[#f4f8ff] text-center  '>
-   <h2 className="text-3xl md:text-5xl py-10 font-extrabold text-[#1F2A44] mb-12">
-          Student Testimonials
-        </h2> </div>
-        <section className="bg-white text-center py-12 px-4">
+    <section className="bg-[#F4F9FF] text-center py-12 px-4">
+      <h2 className="text-3xl md:text-5xl py-10 font-extrabold text-[#1F2A44] mb-12">
+        Student Testimonials
+      </h2>
       <div className="max-w-6xl mx-auto">
-        
-
-        <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-18">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {testimonials.map((item, index) => (
             <div
               key={index}
@@ -75,11 +71,13 @@ export default function StudentTestimonials() {
               <h3 className="font-semibold text-xl mb-4">
                 {showMarathi ? item.name_mr : item.name_en}
               </h3>
-              <p className="text-base leading-relaxed">"{showMarathi ? item.mr : item.en}"</p>
+              <p className="text-base leading-relaxed">
+                "{showMarathi ? item.mr : item.en}"
+              </p>
             </div>
           ))}
         </div>
       </div>
-    </section></>
+    </section>
   );
 }

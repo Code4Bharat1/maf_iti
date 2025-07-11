@@ -36,9 +36,9 @@ export default function BlogPostPage() {
       {/* Fully left-stuck blue background */}
       <div className="absolute top-50 left-0 w-[300px] h-[420px] bg-[#132C4B] z-0 rounded-tr-md rounded-br-md" />
 
-      <div className="max-w-5xl mx-auto px-4 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 relative z-15">
         <h1 className="text-4xl  font-bold mb-6">{post.title}</h1>
-        <p className="text-gray-600 mb-4">{post.date}</p>
+        <p className="text-black mb-4 text-2xl">{post.date}</p>
 
         {/* Image overlapping blue box, shifted up and left */}
         <div className="relative w-fit mb-10 mt-15 ml-0 sm:ml-[-50px] md:ml-[-100px] lg:ml-[-150px]">
