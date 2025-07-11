@@ -32,8 +32,8 @@ export default function BlogSection() {
     router.push('/courses/blog');
   };
 
-  const handlePostClick = (name) => {
-    router.push(`/courses/blog/${name}`);
+  const handlePostClick = (id) => {
+    router.push(`/courses/blog/${id}`);
   };
 
   return (
@@ -49,16 +49,16 @@ export default function BlogSection() {
             {blogs.map((post, index) => (
               <div
                 key={index}
-                onClick={() => handlePostClick(post.name)}
+                onClick={() => handlePostClick(post._id)}
                 className="cursor-pointer bg-[#1A3161] rounded-md text-center hover:scale-[1.02] transition-transform duration-300"
               >
                 <img
-  src={post.image ? post.image : '/placeholder.png'}
-  alt="Blog"
-  width={400}
-  height={250}
-  className="w-full h-[250px] object-cover"
-/>
+                  src={post.image ? post.image : '/placeholder.png'}
+                  alt="Blog"
+                  width={400}
+                  height={250}
+                  className="w-full h-[250px] object-cover"
+                />
 
                 <p className="bg-white text-black font-medium px-4 py-2 mt-4 inline-block">
                   {post.date}
