@@ -29,35 +29,36 @@ export default function CoursesSection() {
   };
 
   return (
-      <section className="bg-[#f3f8fe] py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          
-          <h2 className="text-xl md:text-4xl font-extrabold text-center mb-10 text-[#1a264f]">
-            Our Courses
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-            {courses.map((course, idx) => (
-              <div
-                key={idx}
-                onClick={() => handleClick(course.route)}
-                className="cursor-pointer bg-white overflow-hidden shadow hover:shadow-lg transition rounded"
-              >
-                <div className="relative w-full h-56">
-                  <Image
-                    src={course.image}
-                    alt={course.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-12 mx-4 text-center text-2xl font-semibold text-black">
-                  {course.title}
-                </div>
+    <section className="bg-[#f3f8fe] py-12 px-4">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-10 text-[#1a264f]">
+          Our Courses
+        </h2>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {courses.map((course, idx) => (
+            <div
+              key={idx}
+              onClick={() => handleClick(course.route)}
+              className="cursor-pointer bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+            >
+              <div className="relative w-full h-56 sm:h-64 md:h-72">
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-            ))}
-          </div>
+              <div className="p-4 sm:p-6 text-center">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-black leading-snug">
+                  {course.title}
+                </h3>
+              </div>
+            </div>
+          ))}
         </div>
-      </section>
-    );
-  }
-  
+      </div>
+    </section>
+  );
+}

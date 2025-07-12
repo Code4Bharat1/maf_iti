@@ -37,33 +37,36 @@ export default function BlogSection() {
   };
 
   return (
-    <div className="bg-[#1A3161] py-12 text-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-extrabold text-center mb-10">Our Blog</h2>
+    <div className="bg-[#1A3161] py-12 text-white font-poppins">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-10">
+          Our Blog
+        </h2>
 
         {loading && <p className="text-center">Loading...</p>}
         {error && <p className="text-center text-red-500">{error}</p>}
 
         {!loading && !error && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {blogs.map((post, index) => (
               <div
                 key={index}
                 onClick={() => handlePostClick(post._id)}
                 className="cursor-pointer bg-[#1A3161] rounded-md text-center hover:scale-[1.02] transition-transform duration-300"
               >
-                <img
+                <Image
                   src={post.image ? post.image : '/placeholder.png'}
                   alt="Blog"
                   width={400}
                   height={250}
-                  className="w-full h-[250px] object-cover"
+                  className="w-full h-[220px] sm:h-[250px] object-cover rounded-t-md"
                 />
-
                 <p className="bg-white text-black font-medium px-4 py-2 mt-4 inline-block">
                   {post.date}
                 </p>
-                <h3 className="text-lg mx-12 font-medium mt-3 px-2">{post.title}</h3>
+                <h3 className="text-base sm:text-lg mx-4 sm:mx-12 font-medium mt-3 px-2">
+                  {post.title}
+                </h3>
               </div>
             ))}
           </div>
@@ -72,7 +75,7 @@ export default function BlogSection() {
         <div className="text-center mt-10">
           <button
             onClick={handleViewAll}
-            className="bg-yellow-400 cursor-pointer hover:bg-yellow-500 text-black font-semibold py-2 px-6 rounded"
+            className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-6 rounded transition"
           >
             View All
           </button>

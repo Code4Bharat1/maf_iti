@@ -7,7 +7,6 @@ export default function NoticeNewsSection() {
   const [notices, setNotices] = useState([]);
   const [news, setNews] = useState([]);
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -15,7 +14,6 @@ export default function NoticeNewsSection() {
           axios.get('http://localhost:5000/api/admin/notices'),
           axios.get('http://localhost:5000/api/admin/news'),
         ]);
-
         setNotices(noticeRes.data || []);
         setNews(newsRes.data || []);
       } catch (err) {
@@ -27,11 +25,12 @@ export default function NoticeNewsSection() {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row border border-blue-200 rounded-md overflow-hidden">
-      {/* Left Side: Notice Board */}
-      <div className="bg-[#1a264f] text-[#FFD700] w-full md:w-4/5 p-6">
-        <div className="flex justify-center items-center mb-4">
-          <div className="notice-arrow bg-[#FFD700] text-black text-xl font-bold px-8 py-3 w-fit">
+    <div className="flex flex-col lg:flex-row rounded-md border border-blue-200 overflow-hidden shadow-md">
+      {/* Notice Board */}
+      <div className="bg-[#1a264f] text-[#FFD700] w-full lg:w-2/3 p-4 sm:p-6">
+        {/* Header */}
+        <div className="flex justify-center items-center mb-6">
+          <div className="notice-arrow bg-[#FFD700] text-black font-bold text-base sm:text-lg md:text-xl px-6 py-2 sm:px-8 sm:py-3">
             NOTICE BOARD
           </div>
         </div>
@@ -42,27 +41,38 @@ export default function NoticeNewsSection() {
           }
         `}</style>
 
-        <div className='space-y-8 mx-10 mt-10 mb-10 text-sm md:text-2xl'>
-          {notices.map((notice, index) => (
-            <div key={index} className='flex gap-3'>
-              <span className='text-2xl'>•</span>
-              <span className="break-words">{notice.description}</span>
-            </div>
-          ))}
+        {/* Content */}
+        <div className="space-y-5 sm:space-y-6 px-4 sm:px-6 text-sm sm:text-base md:text-lg">
+          {notices.length > 0 ? (
+            notices.map((notice, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <span className="text-lg sm:text-2xl">•</span>
+                <span className="break-words">{notice.description}</span>
+              </div>
+            ))
+          ) : (
+            <p className="text-white">No notices available at the moment.</p>
+          )}
         </div>
       </div>
 
-      {/* Right Side: Latest News */}
-      <div className="bg-white text-black w-full md:w-3/5 p-6">
-        <h3 className="text-2xl underline text-center font-medium mb-4">LATEST NEWS</h3>
+      {/* Latest News */}
+      <div className="bg-white text-black w-full lg:w-1/3 p-4 sm:p-6">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold underline text-center mb-4">
+          LATEST NEWS
+        </h3>
 
-        <div className="space-y-4 mt-8 text-sm md:text-2xl mx-6">
-          {news.map((item, index) => (
-            <div key={index} className="flex gap-3">
-              <span className="text-xl">•</span>
-              <span className="break-words">{item.description}</span>
-            </div>
-          ))}
+        <div className="space-y-5 sm:space-y-6 px-2 sm:px-4 text-sm sm:text-base md:text-lg">
+          {news.length > 0 ? (
+            news.map((item, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <span className="text-lg sm:text-xl">•</span>
+                <span className="break-words">{item.description}</span>
+              </div>
+            ))
+          ) : (
+            <p>No latest news to display.</p>
+          )}
         </div>
       </div>
     </div>

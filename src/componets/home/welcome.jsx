@@ -23,8 +23,8 @@ export default function WelcomeSection() {
   };
 
   return (
-    <section ref={ref} className="bg-[#F4F9FF] py-10 px-4 overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
+    <section ref={ref} className="bg-[#F4F9FF] py-10 px-4 sm:px-6 lg:px-8 overflow-hidden font-poppins">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
         
         {/* Text Left */}
         <motion.div 
@@ -39,7 +39,7 @@ export default function WelcomeSection() {
           {/* Text content */}
           <div>
             <motion.h2 
-              className="text-4xl md:text-5xl font-Poppins font-extrabold text-gray-900 mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4"
               variants={fadeInUp}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -48,7 +48,7 @@ export default function WelcomeSection() {
             </motion.h2>
 
             <motion.p 
-              className="text-gray-900 text-lg md:text-2xl leading-relaxed"
+              className="text-gray-900 text-base sm:text-lg md:text-2xl leading-relaxed"
               variants={fadeInUp}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -70,14 +70,14 @@ export default function WelcomeSection() {
         >
           <motion.div
             whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-            className="relative overflow-hidden rounded-lg"
+            className="relative overflow-hidden rounded-lg w-full max-w-[500px] mx-auto"
           >
             <Image
               src="/home/welcome.png"
               alt="Computer Lab"
               width={500}
               height={300}
-              className="mx-auto shadow-lg object-cover transition-transform duration-500"
+              className="w-full h-auto shadow-lg object-cover transition-transform duration-500"
             />
           </motion.div>
         </motion.div>

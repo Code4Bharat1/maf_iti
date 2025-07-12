@@ -82,43 +82,42 @@ export default function Navbar() {
 
   return (
     <div className="w-full sticky top-0 z-50">
-      {/* Top Contact Info Bar */}
-      <div className="bg-[#1c2848] text-white text-xs md:text-sm px-4 py-1 flex justify-between items-start">
-        {/* Left side: email and phone */}
-        <div className="flex items-start space-x-6">
-          <div className="flex items-start space-x-2 mt-1">
+      {/* Top Bar */}
+      <div className="bg-[#1c2848] text-white text-xs sm:text-sm px-4 py-2 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
+        {/* Email and Phone */}
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-6">
+          <div className="flex items-center gap-2">
             <span className="bg-yellow-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm">
-              <MdEmail className="text-sm" />
+              <MdEmail />
             </span>
-            <span className="text-white text-xs md:text-sm font-medium font-Poppins">
+            <span className="font-medium font-Poppins break-words text-[12px] sm:text-sm">
               awtmaft@gmail.com
             </span>
           </div>
 
-          <div className="flex items-start space-x-2 mt-1">
+          <div className="flex items-center gap-2">
             <span className="bg-yellow-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm">
-              <MdPhone className="text-sm" />
+              <MdPhone />
             </span>
-            <span className="text-white text-xs md:text-sm font-medium font-Poppins">
+            <span className="font-medium font-Poppins break-words text-[12px] sm:text-sm">
               +91 8983508919
             </span>
           </div>
         </div>
 
-        {/* Right side: Admin Login or Logout */}
-        <div className="flex items-center space-x-4">
-          {!isLoggedIn && (
+        {/* Admin login/logout */}
+        <div className="mt-1 sm:mt-0">
+          {!isLoggedIn ? (
             <button
               onClick={() => handleNavigation("http://localhost:3000")}
-              className="bg-yellow-500 hover:bg-yellow-500 text-black px-3 py-1 rounded text-sm"
+              className="bg-yellow-500 text-black px-3 py-1 rounded text-xs sm:text-sm hover:bg-yellow-400 transition"
             >
               Admin Login
             </button>
-          )}
-          {isLoggedIn && (
+          ) : (
             <button
               onClick={handleLogout}
-              className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm"
+              className="bg-red-500 text-white px-3 py-1 rounded text-xs sm:text-sm hover:bg-red-600 transition"
             >
               Logout
             </button>
@@ -126,11 +125,11 @@ export default function Navbar() {
         </div>
       </div>
 
-      <hr className="bg-white border border-white" />
+      <hr className="border-white" />
 
-      {/* Main navbar section */}
-      <div className="bg-[#1c2848] w-full mobile-menu-container">
-        <div className="w-[95%] mx-auto px-4 md:px-6 flex items-center justify-between py-2 md:py-1 max-w-[1600px]">
+      {/* Main Nav */}
+      <div className="bg-[#1c2848] mobile-menu-container">
+        <div className="flex items-center justify-between px-4 py-2 md:px-6 w-full max-w-[1600px] mx-auto">
           {/* Logo */}
           <div onClick={() => handleNavigation("/")} className="cursor-pointer">
             <Image
@@ -138,61 +137,57 @@ export default function Navbar() {
               alt="Logo"
               width={60}
               height={60}
-              className="md:w-[100px] md:h-[80px]"
+              className="w-[60px] h-[60px] sm:w-[80px] sm:h-[70px] md:w-[100px] md:h-[80px] object-contain"
             />
           </div>
 
-          {/* Desktop Navigation menu */}
-          <ul className="hidden lg:flex space-x-6 xl:space-x-8 text-lg xl:text-xl font-medium">
+          {/* Desktop Nav */}
+          <ul className="hidden lg:flex flex-wrap space-x-4 xl:space-x-6 text-sm xl:text-base font-medium">
             {menuItems.map(({ name, path }) => (
               <li
                 key={name}
                 onClick={() => handleNavigation(path)}
-                className={`cursor-pointer ${
-                  pathname === path ? "text-[#FFD700]" : "text-white"
-                } hover:text-yellow-300 transition whitespace-nowrap`}
+                className={`cursor-pointer whitespace-nowrap transition hover:text-yellow-300 ${
+                  pathname === path ? "text-yellow-400" : "text-white"
+                }`}
               >
                 {name}
               </li>
             ))}
           </ul>
 
-          {/* Mobile hamburger menu button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="lg:hidden flex flex-col space-y-1 focus:outline-none"
-            aria-label="Toggle mobile menu"
-          >
-            <div
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+          {/* Mobile Hamburger */}
+          <button onClick={toggleMobileMenu} className="lg:hidden flex flex-col gap-1">
+            <span
+              className={`h-0.5 w-6 bg-white transition-transform duration-300 ${
                 isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
               }`}
-            ></div>
-            <div
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+            />
+            <span
+              className={`h-0.5 w-6 bg-white transition-opacity duration-300 ${
                 isMobileMenuOpen ? "opacity-0" : ""
               }`}
-            ></div>
-            <div
-              className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+            />
+            <span
+              className={`h-0.5 w-6 bg-white transition-transform duration-300 ${
                 isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
               }`}
-            ></div>
+            />
           </button>
         </div>
 
-        {/* Mobile menu dropdown */}
+        {/* Mobile Menu */}
         <div
-          className={`lg:hidden bg-[#1c2848] border-t border-gray-600 transition-all duration-300 overflow-hidden ${
+          className={`lg:hidden transition-all duration-300 bg-[#1c2848] overflow-hidden ${
             isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="py-4 px-6 grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-4 p-4">
             {menuItems.map(({ name, path }) => (
               <div
                 key={name}
                 onClick={() => handleNavigation(path)}
-                className={`cursor-pointer py-3 px-2 text-sm font-medium border rounded-md text-center transition-colors ${
+                className={`text-center border rounded-md px-2 py-2 text-sm font-medium transition-colors cursor-pointer ${
                   pathname === path
                     ? "text-yellow-400 border-yellow-400"
                     : "text-white border-gray-600 hover:text-yellow-300 hover:border-yellow-300"
@@ -203,27 +198,24 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile logout only (no login) */}
           {isLoggedIn && (
-            <div className="px-6 pb-4 border-t border-gray-600 pt-4">
-              <div className="space-y-2">
-                <p className="text-white text-sm">Welcome, User</p>
-                <button
-                  onClick={handleLogout}
-                  className="w-full bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm font-medium"
-                >
-                  Logout
-                </button>
-              </div>
+            <div className="px-4 pb-4 pt-2 border-t border-gray-600">
+              <p className="text-white text-sm mb-2">Welcome, User</p>
+              <button
+                onClick={handleLogout}
+                className="w-full bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm font-medium"
+              >
+                Logout
+              </button>
             </div>
           )}
         </div>
 
-        {/* Marquee Section */}
+        {/* Marquee */}
         <div className="w-full bg-[#FFDF35] py-1 overflow-hidden">
           <div
             ref={marqueeRef}
-            className="whitespace-nowrap text-black font-semibold flex text-sm md:text-base"
+            className="whitespace-nowrap text-black font-semibold flex text-[10px] sm:text-xs md:text-sm lg:text-base"
           >
             {Array(25)
               .fill(marqueeText)

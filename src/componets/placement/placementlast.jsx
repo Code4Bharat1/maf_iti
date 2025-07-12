@@ -24,20 +24,23 @@ export default function Placementlast() {
         Placement at our MAF ITI
       </h2>
       
-      <section className="bg-white p-4 sm:p-8 md:p-20">
+      <section className="bg-white p-4 sm:p-8 md:px-10 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-7 md:gap-8 bg-white max-w-6xl mx-auto">
           {placements.map((person, index) => (
-            <div key={index} className="relative bg-[#1F2A44] text-[#1a264f] rounded-2xl p-4 pt-8 sm:p-5 sm:pt-10 md:p-6 md:pt-12 shadow-md py-6 sm:py-8 md:py-10 text-center">
+            <div
+              key={index}
+              className="relative bg-[#1F2A44] text-white rounded-2xl pt-10 pb-6 px-4 sm:px-6 md:px-8 shadow-md text-center"
+            >
               {/* User icon */}
-              <div className="absolute -top-4 sm:-top-6 md:-top-7 left-1/2 transform -translate-x-1/2 bg-white p-1 rounded-full shadow-md">
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-white p-2 rounded-full shadow-md">
                 <FaUserCircle className="text-4xl sm:text-5xl md:text-6xl text-black" />
               </div>
-              
-              <h3 className="font-semibold text-white text-base sm:text-lg md:text-lg mb-3 sm:mb-4 mt-2 sm:mt-3 px-2">
+
+              <h3 className="font-semibold text-base sm:text-lg md:text-xl mb-4 mt-2 px-2">
                 {person.name}
               </h3>
-              
-              <div className="bg-white text-sm sm:text-md md:text-lg font-semibold text-black rounded p-3 px-6 sm:p-4 sm:px-8 md:p-4 md:px-8 whitespace-pre-line inline-block">
+
+              <div className="bg-white text-sm sm:text-base md:text-lg font-semibold text-black rounded px-4 py-3 whitespace-pre-line inline-block">
                 {person.company}
               </div>
             </div>

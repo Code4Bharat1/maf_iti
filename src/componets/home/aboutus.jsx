@@ -20,24 +20,26 @@ export default function HomeAboutUs() {
   return (
     <section className="relative bg-white py-10 px-4 overflow-hidden">
       {/* Heading */}
-    <h2 className="text-center text-5xl md:text-5xl font-extrabold  text-[#1F2A44] z-40 relative mb-12">
-    About Us
-  </h2>
+      <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1F2A44] z-40 relative mb-12">
+        About Us
+      </h2>
+
       {/* Black line behind cards */}
-   <div className="absolute top-1/2 left-0 right-0 mx-35 h-8 bg-[#1F2A44] font-bold z-20 rounded shadow-md shadow-[#C3C3C3]" />
+      <div className="absolute top-1/2 left-0 right-0 mx-35 h-8 bg-[#1F2A44] font-bold z-20 rounded shadow-md shadow-[#C3C3C3]" />
 
       {/* Card container */}
-      <div className="relative z-20 flex flex-col md:flex-row flex-wrap justify-center items-stretch gap-6 max-w-7xl mx-auto px-4 mb-10">
+      <div className="relative z-20 flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-6 max-w-7xl mx-auto px-2 sm:px-4 mb-10">
         {aboutItems.map((item, index) => (
-          <div key={index} className="relative w-full md:w-[45%] lg:w-[22%]">
-            
-            {/* Yellow background box with one rounded corner */}
-        <div className="absolute inset-0 w-60 bg-yellow-400 border border-[#C3C3C3] rounded-tl-3xl rounded-r-3xl h-80 z-10" />
+          <div
+            key={index}
+            className="relative w-full sm:w-[80%] md:w-[45%] lg:w-[22%] min-h-[20rem] flex justify-center"
+          >
+            {/* Yellow background box */}
+            <div className="absolute inset-0 w-[90%] sm:w-60 bg-yellow-400 border border-[#C3C3C3] rounded-tl-3xl rounded-r-3xl h-80 z-10 mx-auto" />
 
-
-            {/* White top card */}
-            <div className="ml-4 relative w-65 z-30 bg-white mt-2 h-76 border border-[#C3C3C3] rounded-tl-3xl rounded-r-3xl p-8 shadow-lg text-center text-[#0a1f44]">
-              <p className="text-base md:text-md font-semibold leading-relaxed">
+            {/* White card */}
+            <div className="relative z-30 bg-white mt-2 h-76 border border-[#C3C3C3] rounded-tl-3xl rounded-r-3xl p-6 sm:p-8 shadow-lg text-center text-[#0a1f44] w-[95%] sm:w-65 ml-2 sm:ml-4">
+              <p className="text-sm sm:text-base md:text-md font-semibold leading-relaxed">
                 {item.text}
               </p>
             </div>
@@ -45,19 +47,16 @@ export default function HomeAboutUs() {
         ))}
       </div>
 
-      {/* Bottom wave (optional, can tweak color/shape) */}
-    <div className="absolute bottom-0 bg-[#BAC7E5] left-0 w-full z-10">
-  <svg
-    viewBox="0 0 1440 100"
-    className="w-full h-[260px]"
-    preserveAspectRatio="none"
-  >
-    {/* Mirrored the wave by flipping the path horizontally */}
-    <path fill="white" d="M1440,0 C960,100 480,0 0,100 L0,0 L1440,0 Z" />
-  </svg>
-</div>
-
-  
+      {/* Bottom wave */}
+      <div className="absolute bottom-0 bg-[#BAC7E5] left-0 w-full z-10">
+        <svg
+          viewBox="0 0 1440 100"
+          className="w-full h-[100px] sm:h-[180px] md:h-[260px]"
+          preserveAspectRatio="none"
+        >
+          <path fill="white" d="M1440,0 C960,100 480,0 0,100 L0,0 L1440,0 Z" />
+        </svg>
+      </div>
     </section>
   );
 }

@@ -2,11 +2,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-
 export default function Faculty1() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
-
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -58,49 +56,50 @@ export default function Faculty1() {
       image: "/faculty/sir6.png",
       bio: "Experienced in technical education and training.",
     },
-     {
-    name: "Dakhni Rahish. AR",
-    title: "Trade Instructor", 
-    experience: "13+ years of Teaching & Industrial Experience",
-    image: "/faculty/sir7.png", // You'll need to replace with actual path
-    bio: "Experienced in technical education and training.",
-  },
-  {
-    name: "Chogale Sushil. G",
-    title: "Trade Instructor",
-    experience: "11+ years of Teaching & Industrial Experience", 
-    image: "/faculty/sir8.png", // You'll need to replace with actual path
-    bio: "Experienced in technical education and training.",
-  },
-  {
-    name: "Kadiri Maryam. M",
-    title: "Employability Skills Instructor",
-    experience: "4+ years of Teaching & Industrial Experience",
-    image: "/faculty/sir9.png", // You'll need to replace with actual path
-    bio: "Experienced in technical education and training.",
-  }
+    {
+      name: "Dakhni Rahish. AR",
+      title: "Trade Instructor",
+      experience: "13+ years of Teaching & Industrial Experience",
+      image: "/faculty/sir7.png",
+      bio: "Experienced in technical education and training.",
+    },
+    {
+      name: "Chogale Sushil. G",
+      title: "Trade Instructor",
+      experience: "11+ years of Teaching & Industrial Experience",
+      image: "/faculty/sir8.png",
+      bio: "Experienced in technical education and training.",
+    },
+    {
+      name: "Kadiri Maryam. M",
+      title: "Employability Skills Instructor",
+      experience: "4+ years of Teaching & Industrial Experience",
+      image: "/faculty/sir9.png",
+      bio: "Experienced in technical education and training.",
+    }
   ];
- return (
+
+  return (
     <section className="bg-[#f4f8ff] py-6 font-poppins">
       <h2 className="text-5xl font-extrabold text-center text-[#1F2A44] mb-10">
         Our Faculty
       </h2>
 
-      <div className={`w-full ${isMobile ? 'overflow-x-scroll' : ''}`}>
+      <div className={`w-full ${isMobile ? 'overflow-x-auto' : ''}`}>
         <div className={`${isMobile ? 'flex gap-6 px-4 pb-4' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4'} max-w-7xl mx-auto`}>
           {facultyMembers.map((member, index) => (
             <div
               key={index}
               onMouseEnter={() => !isMobile && setHoveredIndex(index)}
               onMouseLeave={() => !isMobile && setHoveredIndex(null)}
-              className={`relative ${isMobile ? 'w-[280px] flex-shrink-0' : 'w-full max-w-[300px] mx-auto'} h-[470px]`}
+              className={`relative ${isMobile ? 'w-[280px] flex-shrink-0' : 'w-full max-w-[300px] mx-auto'} h-[500px]`}
             >
-              {/* Yellow Box - Reduced Size */}
+              {/* Yellow Box with hover effect on desktop */}
               <div
                 className={`absolute left-1/2 transform -translate-x-1/2 rounded-2xl shadow-xl transition-all duration-300 overflow-hidden z-10 ${
                   hoveredIndex === index
-                    ? "bg-yellow-400 w-[260px] h-[323px] top-10"
-                    : "bg-yellow-300 w-[260px] h-[323px] top-10"
+                    ? "bg-yellow-400 w-[260px] h-[360px] top-10 scale-105"
+                    : "bg-yellow-300 w-[260px] h-[360px] top-10"
                 }`}
               />
 
@@ -118,7 +117,7 @@ export default function Faculty1() {
               </div>
 
               {/* Blue Info Box */}
-              <div className="absolute top-[180px] left-1/2 transform -translate-x-1/2 bg-[#2D314A] w-[230px] min-h-[11px] rounded-xl px-3 py-3 z-30 flex flex-col items-center justify-center text-center text-[#FFDF35]">
+              <div className="absolute top-[180px] left-1/2 transform -translate-x-1/2 bg-[#2D314A] w-[230px] min-h-[110px] rounded-xl px-3 py-3 z-30 flex flex-col items-center justify-center text-center text-[#FFDF35]">
                 <h3 className="text-xl font-medium mb-1">{member.name}</h3>
                 <p className="font-semibold text-lg mb-1">{member.title}</p>
                 <p className="text-sm text-white">{member.experience}</p>
@@ -143,7 +142,7 @@ export default function Faculty1() {
             </svg>
           </div>
         </div>
-      )}  
+      )}
     </section>
   );
 }

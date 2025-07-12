@@ -53,9 +53,12 @@ export default function FAQPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#f4f8ff] py-10 px-4 sm:px-10">
-      <h1 className="text-4xl font-extrabold font-Poppins text-[#1F2A44] text-center mb-6">FAQ’s</h1>
-      <div className="space-y-3 max-w-7xl mx-auto">
+    <main className="min-h-screen bg-[#f4f8ff] py-10 px-4 sm:px-6 md:px-10 font-poppins">
+      <h1 className="text-3xl sm:text-4xl font-extrabold text-[#1F2A44] text-center mb-6">
+        FAQ’s
+      </h1>
+
+      <div className="space-y-4 max-w-5xl mx-auto">
         {faqs.map((faq, index) => (
           <FaqItem key={index} question={faq.question} answer={faq.answer} />
         ))}
@@ -75,10 +78,12 @@ function FaqItem({ question, answer }) {
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex justify-between items-center">
-        <h3 className="font-semibold px-4 text-lg text-gray-800 pb-2">{question}</h3>
+        <h3 className="font-semibold px-4 text-base sm:text-lg text-gray-800 pb-2">
+          {question}
+        </h3>
         <ChevronDown
           size={28}
-          color="#000000" // Pure black arrow as in the 1st image
+          color="#000000"
           className={`transition-transform duration-300 mr-2 ${
             isOpen ? 'rotate-180' : ''
           }`}
@@ -87,7 +92,7 @@ function FaqItem({ question, answer }) {
 
       {isOpen && (
         <div
-          className="mt-3 text-lg px-4 font-semibold text-gray-800"
+          className="mt-3 text-sm sm:text-base md:text-lg px-4 font-semibold text-gray-800"
           dangerouslySetInnerHTML={{ __html: answer }}
         />
       )}

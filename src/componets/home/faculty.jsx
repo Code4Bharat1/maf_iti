@@ -60,80 +60,70 @@ export default function Faculty() {
     },
   ];
 
-  return (
-    <section className="bg-[#f4f8ff] py-6 font-poppins">
-      <h2 className="text-5xl font-extrabold text-center text-[#1F2A44] mb-10">
-        Our Faculty
-      </h2>
-
-      <div className={`w-full ${isMobile ? 'overflow-x-scroll' : ''}`}>
-        <div className={`${isMobile ? 'flex gap-6 px-4 pb-4' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4'} max-w-7xl mx-auto`}>
-          {facultyMembers.map((member, index) => (
-            <div
-              key={index}
-              onMouseEnter={() => !isMobile && setHoveredIndex(index)}
-              onMouseLeave={() => !isMobile && setHoveredIndex(null)}
-              className={`relative ${isMobile ? 'w-[280px] flex-shrink-0' : 'w-full max-w-[300px] mx-auto'} h-[470px]`}
-            >
-              {/* Yellow Box - Reduced Size */}
-              <div
-                className={`absolute left-1/2 transform -translate-x-1/2 rounded-2xl shadow-xl transition-all duration-300 overflow-hidden z-10 ${
-                  hoveredIndex === index
-                    ? "bg-yellow-400 w-[260px] h-[323px] top-10"
-                    : "bg-yellow-300 w-[260px] h-[323px] top-10"
-                }`}
-              />
-
-              {/* Image */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-20">
-                <div className="relative w-[200px] h-[200px] rounded-lg overflow-hidden">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover object-center"
-                    sizes="200px"
-                  />
-                </div>
-              </div>
-
-              {/* Blue Info Box */}
-              <div className="absolute top-[180px] left-1/2 transform -translate-x-1/2 bg-[#2D314A] w-[230px] min-h-[110px] rounded-xl px-3 py-3 z-30 flex flex-col items-center justify-center text-center text-[#FFDF35]">
-                <h3 className="text-xl font-medium mb-1">{member.name}</h3>
-                <p className="font-semibold text-lg mb-1">{member.title}</p>
-                <p className="text-sm text-white">{member.experience}</p>
-                {(hoveredIndex === index || isMobile) && (
-                  <div className="mt-2 pt-1">
-                    <p className="text-xs text-gray-300 px-1">{member.bio}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile scroll hint */}
-      {isMobile && (
-        <div className="text-center mt-6">
-          <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2 rounded-full">
-            <span className="text-sm">Swipe to see more</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
-        </div>
-      )}
-
-      {/* View More Button */}
-      <div className="text-center mt-10">
-        <button
-          onClick={() => router.push("/faculty")}
-          className="bg-[#1F2A44] cursor-pointer text-white px-6 py-3 rounded-lg font-medium hover:bg-[#2D314A] transition justify-center"
-        >
-          VIEW MORE
-        </button>
-      </div>
-    </section>
-  );
-}
+ return (
+     <section className="bg-[#f4f8ff] py-6 font-poppins">
+       <h2 className="text-5xl font-extrabold text-center text-[#1F2A44] mb-10">
+         Our Faculty
+       </h2>
+ 
+       <div className={`w-full ${isMobile ? 'overflow-x-auto' : ''}`}>
+         <div className={`${isMobile ? 'flex gap-6 px-4 pb-4' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4'} max-w-7xl mx-auto`}>
+           {facultyMembers.map((member, index) => (
+             <div
+               key={index}
+               onMouseEnter={() => !isMobile && setHoveredIndex(index)}
+               onMouseLeave={() => !isMobile && setHoveredIndex(null)}
+               className={`relative ${isMobile ? 'w-[280px] flex-shrink-0' : 'w-full max-w-[300px] mx-auto'} h-[500px]`}
+             >
+               {/* Yellow Box with hover effect on desktop */}
+               <div
+                 className={`absolute left-1/2 transform -translate-x-1/2 rounded-2xl shadow-xl transition-all duration-300 overflow-hidden z-10 ${
+                   hoveredIndex === index
+                     ? "bg-yellow-400 w-[260px] h-[360px] top-10 scale-105"
+                     : "bg-yellow-300 w-[260px] h-[360px] top-10"
+                 }`}
+               />
+ 
+               {/* Image */}
+               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-20">
+                 <div className="relative w-[200px] h-[200px] rounded-lg overflow-hidden">
+                   <Image
+                     src={member.image}
+                     alt={member.name}
+                     fill
+                     className="object-cover object-center"
+                     sizes="200px"
+                   />
+                 </div>
+               </div>
+ 
+               {/* Blue Info Box */}
+               <div className="absolute top-[180px] left-1/2 transform -translate-x-1/2 bg-[#2D314A] w-[230px] min-h-[110px] rounded-xl px-3 py-3 z-30 flex flex-col items-center justify-center text-center text-[#FFDF35]">
+                 <h3 className="text-xl font-medium mb-1">{member.name}</h3>
+                 <p className="font-semibold text-lg mb-1">{member.title}</p>
+                 <p className="text-sm text-white">{member.experience}</p>
+                 {(hoveredIndex === index || isMobile) && (
+                   <div className="mt-2 pt-1">
+                     <p className="text-xs text-gray-300 px-1">{member.bio}</p>
+                   </div>
+                 )}
+               </div>
+             </div>
+           ))}
+         </div>
+       </div>
+ 
+       {/* Mobile scroll hint */}
+       {isMobile && (
+         <div className="text-center mt-6">
+           <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2 rounded-full">
+             <span className="text-sm">Swipe to see more</span>
+             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+             </svg>
+           </div>
+         </div>
+       )}
+     </section>
+   );
+ }
