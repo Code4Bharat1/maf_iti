@@ -11,7 +11,7 @@ export default function VideoGallery() {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/admin/media/videos');
+        const res = await axios.get('https://iti-api.nexcorealliance.com/api/admin/media/videos');
         if (Array.isArray(res.data)) {
           console.log("Fetched videos:", res.data);
 
@@ -55,7 +55,7 @@ export default function VideoGallery() {
     <div key={video._id} className="flex flex-col items-center gap-2">
       <div className="w-full rounded overflow-hidden shadow border border-gray-300">
         <video
-          src={`http://localhost:5000${video.videoUrl}`}
+          src={`https://iti-api.nexcorealliance.com${video.videoUrl}`}
           controls
           className="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-contain bg-black"
         />

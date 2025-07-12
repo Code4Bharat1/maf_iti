@@ -12,7 +12,7 @@ export default function StudentCorner() {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          "http://localhost:5000/api/admin/toppers/getTopper",
+          "https://iti-api.nexcorealliance.com/api/admin/toppers/getTopper",
           {
             headers: {
               Authorization: `Bearer ${token}`,

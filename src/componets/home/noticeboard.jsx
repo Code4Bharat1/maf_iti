@@ -12,8 +12,8 @@ export default function NoticeNewsSection() {
     const fetchData = async () => {
       try {
         const [noticeRes, newsRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/admin/notices'),
-          axios.get('http://localhost:5000/api/admin/news'),
+          axios.get('https://iti-api.nexcorealliance.com/api/admin/notices'),
+          axios.get('https://iti-api.nexcorealliance.com/api/admin/news'),
         ]);
 
         setNotices(noticeRes.data || []);

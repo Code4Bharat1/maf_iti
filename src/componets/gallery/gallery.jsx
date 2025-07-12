@@ -10,9 +10,9 @@ export default function GalleryPage() {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/admin/media/images');
+        const res = await axios.get('https://iti-api.nexcorealliance.com/api/admin/media/images');
         console.log('API response:', res.data); // ✅ [{...}]console.log("API response:", res.data);
-res.data.forEach(img => console.log(img));
+        res.data.forEach(img => console.log(img));
 
         if (Array.isArray(res.data)) {
           setGalleryImages(res.data);
@@ -34,21 +34,21 @@ res.data.forEach(img => console.log(img));
         Gallery
       </h2>
 
-    <div className="max-w-7xl mx-auto px-2 pb-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-  {galleryImages.map((image, index) => (
-    image.imageUrl ? ( // ✅ ensure it exists
-      <div key={index} className="w-full">
-        <img
-          src={image.imageUrl}  // ✅ use your exact field
-          alt={`image ${index + 1}`}
-          width={500}
-          height={400}
-          className="w-full h-auto object-cover"
-        />
+      <div className="max-w-7xl mx-auto px-2 pb-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+        {galleryImages.map((image, index) => (
+          image.imageUrl ? ( // ✅ ensure it exists
+            <div key={index} className="w-full">
+              <img
+                src={image.imageUrl}  // ✅ use your exact field
+                alt={`image ${index + 1}`}
+                width={500}
+                height={400}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          ) : null
+        ))}
       </div>
-    ) : null
-  ))}
-</div>
     </div>
   );
 }
