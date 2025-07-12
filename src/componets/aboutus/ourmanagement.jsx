@@ -12,8 +12,8 @@ export default function OurManagement() {
          <Image
     src="/home/president.png"
     alt="President"
-    width={500} // (optional, still helps with layout)
-    height={600}
+    width={400} // (optional, still helps with layout)
+    height={500}
     className="h-80 md:h-[400px] md:w-[800px] z-10 ml-0 sm:ml-50 md:ml-70"
   />
   </div>
@@ -50,8 +50,8 @@ export default function OurManagement() {
     <Image
       src="/home/chairman.png"
       alt="Chairman"
-      width={1000}    // increase resolution too
-      height={950}
+      width={400}    // increase resolution too
+      height={500}
       className="left-1/2 lg:w-full h-[10rem] md:h-[25rem] md:w-[20rem] z-10 mr-0 md:mr-60"
     />
   </div>
