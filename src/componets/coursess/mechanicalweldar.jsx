@@ -29,7 +29,7 @@ export default function MarineWelder() {
           Back
         </button>
         
-        <h2 className="text-3xl font-extrabold mb-4">Marine Welder</h2>
+        <h2 className="text-5xl font-extrabold mb-4">Marine Welder</h2>
 
         {/* Image and Description */}
         <div className="grid md:grid-cols-2 gap-2 items-start">
