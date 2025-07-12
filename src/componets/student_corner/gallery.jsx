@@ -30,7 +30,7 @@ export default function Eventgallery() {
 useEffect(() => {
   const fetchImages = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/admin/media/images');
+      const res = await axios.get('https://iti-api.nexcorealliance.com/api/admin/media/images');
       if (Array.isArray(res.data)) {
         setGalleryImages(res.data);
       } else {

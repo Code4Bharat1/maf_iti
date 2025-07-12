@@ -13,7 +13,7 @@ export default function Blogs() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/admin/blogs');
+        const res = await axios.get('https://iti-api.nexcorealliance.com/api/admin/blogs');
         setBlogs(Array.isArray(res.data) ? res.data : []);
       } catch (err) {
         console.error('Error fetching blogs:', err);

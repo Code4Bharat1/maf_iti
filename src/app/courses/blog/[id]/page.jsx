@@ -14,7 +14,7 @@ export default function BlogPostPage() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/admin/blogs/${id}`);
+        const res = await axios.get(`https://iti-api.nexcorealliance.com/api/admin/blogs/${id}`);
         setPost(res.data);
       } catch (err) {
         console.error('Failed to fetch blog:', err);
