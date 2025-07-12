@@ -32,7 +32,7 @@ export default function CoursesSection() {
       <section className="bg-[#f3f8fe] py-12">
         <div className="max-w-7xl mx-auto px-4">
           
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-[#1a264f]">
+          <h2 className="text-xl md:text-4xl font-extrabold text-center mb-10 text-[#1a264f]">
             Our Courses
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">

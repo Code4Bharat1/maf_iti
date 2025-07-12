@@ -24,6 +24,10 @@ export default function TradesPage() {
     },
   ];
 
+   const handleClick = (route) => {
+    router.push(route);
+  };
+
   return (
     <div className="bg-[#F4F8FC] text-[#1F2C56] py-12 px-4">
       {/* Our Trades Section */}
@@ -243,7 +247,7 @@ export default function TradesPage() {
           <th className="px-4 py-3">Duration</th>
         </tr>
       </thead>
-      <tbody className="bg-[#BAC7E5] text-black font-bold text-base text-xl">
+      <tbody className="bg-[#BAC7E5] text-black font-bold text-base ">
         {[
           ["Mechanical Fitter", "10th Passed", "2 Months"],
           ["Marine Electrician", "10th Passed", "2 Months"],
