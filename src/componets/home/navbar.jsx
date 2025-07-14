@@ -109,7 +109,7 @@ export default function Navbar() {
         <div className="mt-1 sm:mt-0">
           {!isLoggedIn ? (
             <button
-              onClick={() => handleNavigation("http://localhost:3000")}
+              onClick={() => handleNavigation("https://iti-admin.nexcorealliance.com")}
               className="bg-yellow-500 text-black px-3 py-1 rounded text-xs sm:text-sm hover:bg-yellow-400 transition"
             >
               Admin Login
